@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "KIKIKA"
+title:  "KIKIKA：简化后的舞蹈游戏，或者说是打地鼠"
 date:   2015-05-03 19:09:11
 categories: jekyll update
 ---
