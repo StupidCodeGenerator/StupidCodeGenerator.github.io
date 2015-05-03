@@ -1,0 +1,12 @@
+# Site settings
+title: B级游戏站
+email: 13609817879@163.com
+description: > # this means to ignore newlines until "baseurl:"
+  此网站使用Jekyll技术在GithubPage上构建，用来宣传那些极少有人知晓的，并不优秀， 
+  甚至并不完整，但是非常有想法的游戏。
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://thebgame.com" # the base hostname & protocol for your site
+github_username:  StupidCodeGenerator
+
+# Build settings
+markdown: kramdown
