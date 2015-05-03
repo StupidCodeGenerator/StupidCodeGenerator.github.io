@@ -1,25 +1,19 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "KIKIKA"
 date:   2015-05-03 19:09:11
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+[游戏下载地址(Android Only)][download-link]
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+也许，这是最简单的游戏了把。
 
-Jekyll also offers powerful support for code snippets:
+一年以前我花了两个小时做了这个游戏。当时我正在一家网游公司制作一款舞蹈类游戏。我觉得舞蹈类游戏的
+本质实际上就是带节奏的打地鼠。所以我花了两个小时做了这个游戏，公司同事说这个东西算没有节奏的舞蹈类游戏，
+而我老婆说这就是打地鼠。
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+我后来想过丰富这个游戏的玩法，但是后来出了一个游戏叫做别踩白块，我自己就放弃了。
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+欢迎大家和我交流
 
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+[download-link]: http://www.mumayi.com/android-615448.html
