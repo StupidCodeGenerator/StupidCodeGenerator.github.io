@@ -44,7 +44,7 @@
   mtime: 2015-05-03 19:09:11.783002000 +08:00
   deps: []
 "/home/stupidcodegenerator/Github/StupidCodeGenerator.github.io/_includes/footer.html":
-  mtime: 2015-05-04 07:06:37.629005986 +08:00
+  mtime: 2015-05-04 07:08:51.717670870 +08:00
   deps: []
 "/home/stupidcodegenerator/Github/StupidCodeGenerator.github.io/_posts/2015-05-03-TheStart.markdown":
   mtime: 2015-05-03 21:00:22.205349178 +08:00
@@ -58,10 +58,13 @@
   mtime: 2015-05-03 19:09:11.783002000 +08:00
   deps: []
 "/home/stupidcodegenerator/Github/StupidCodeGenerator.github.io/_posts/2015-05-03-kikika.markdown":
-  mtime: 2015-05-03 21:02:05.029859041 +08:00
+  mtime: 2015-05-04 07:45:47.148656625 +08:00
   deps:
   - "/home/stupidcodegenerator/Github/StupidCodeGenerator.github.io/_layouts/post.html"
   - "/home/stupidcodegenerator/Github/StupidCodeGenerator.github.io/_includes/head.html"
   - "/home/stupidcodegenerator/Github/StupidCodeGenerator.github.io/_includes/header.html"
   - "/home/stupidcodegenerator/Github/StupidCodeGenerator.github.io/_includes/footer.html"
   - "/home/stupidcodegenerator/Github/StupidCodeGenerator.github.io/_layouts/default.html"
+"/home/stupidcodegenerator/Github/StupidCodeGenerator.github.io/_includes/image.html":
+  mtime: 2015-05-04 07:32:33.976723480 +08:00
+  deps: []
