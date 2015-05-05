@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title:  "密室逃脱之通天塔"
 date:   2015-05-06 06:52:11
@@ -40,7 +40,5 @@ categories: jekyll update
 并且提高美术和音乐整体的制作标准，这个游戏会是一个好游戏的。
 
 [download-link]: http://pan.baidu.com/s/1nt9mKGD
-
 [emulator-link]: http://pan.baidu.com/s/1bnjiICn
-
 [video-link]: http://v.youku.com/v_show/id_XOTQ4NDExOTQ4.html?from=s1.8-1-1.2
