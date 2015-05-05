@@ -6,30 +6,108 @@
 </description>
     <link>http://thebgame.com/</link>
     <atom:link href="http://thebgame.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 May 2015 19:43:00 +0800</pubDate>
-    <lastBuildDate>Sun, 03 May 2015 19:43:00 +0800</lastBuildDate>
+    <pubDate>Wed, 06 May 2015 07:35:21 +0800</pubDate>
+    <lastBuildDate>Wed, 06 May 2015 07:35:21 +0800</lastBuildDate>
     <generator>Jekyll v3.0.0.pre.beta2</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Tongtianta</title>
+        <description>&lt;p&gt;﻿—
+layout: post
+title:  “密室逃脱之通天塔”
+date:   2015-05-06 06:52:11
+categories: jekyll update
+—
+&lt;a href=&quot;http://pan.baidu.com/s/1nt9mKGD&quot;&gt;游戏下载地址&lt;/a&gt;
+&lt;a href=&quot;http://pan.baidu.com/s/1bnjiICn&quot;&gt;模拟器&lt;/a&gt;
+&lt;a href=&quot;http://v.youku.com/v_show/id_XOTQ4NDExOTQ4.html?from=s1.8-1-1.2&quot;&gt;一分钟试玩视频&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i1.tietuku.com/bd7186f6eebd85b5.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;这并不算严格意义上的B级，不过我还是决定应该Post一下这个游戏，因为这是一个典型的粗糙做工毁掉一个好主意的例子。
+这个游戏是第一代Java手机游戏，在绝大多数平台上都已经下架。我在Post的开始，附上了游戏的下载连接和模拟器下载链接。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;游戏的故事背景是一个人在林子里面走向一座塔，去寻找什么生命之水。其背景音乐的素材估计只有5秒，不断的循环，玩过了第一关就把声音关掉了。并且，
+每次你过了一关会从屏幕上方降下来一个分数板，这个音效很明显是从魔兽争霸3里面搞出来的音效（就是那个切换UI时的锁链声）。
+游戏还有一个非常冗长的新手引导以及一个非常复杂的道具系统。个人认为玩游戏的时候这些东西非常严重的影响了游戏体验。
+其道具有标记旗，现形粉，穿格子，填陷阱等等。我说的都不是原名，但是完成的是这样的功能。但是如果滥用道具的话游戏的可玩性就会大大降低了。
+同样的，由于道具系统存在导致游戏公司设计了套非常冗长的新手引导来介绍这些道具。
+整个游戏给我的感觉就是做得非常的匆忙，估计是游戏公司想要着急上线导致的后果。&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i1.tietuku.com/695844069e18c25c.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是这个游戏依然是个好玩的游戏。游戏的玩法是你在一个有很多层的塔里面一层一层向上走，每一层的地面都铺满瓷砖。
+其中，有一些地砖实际上是伪装成地砖的陷阱，只要踩上就会掉下去。很明显，这个游戏的灵感来自于Windows经典的扫雷游戏。
+但是我认为这个游戏其实更接近于扫雷的过程，因为传统扫雷游戏并没有限制你从一个格子走到另一个格子。
+所以Windows的经典扫雷并不会给你带来那种身处危机之中，不知应该前进还是后退的感觉。而通天塔这款游戏由于限制了你只能一步接一步的把整个雷区“趟”过去，
+所以你每一步都处于危险之中，并且根本没办法投机取巧。Windows扫雷当你碰到雷区非常密集的时候，可以立即换另一个地方继续挖，而如果你在这个游戏里面走到雷区，
+就只能硬着头皮往前走一步或者原路退回去了。&lt;/p&gt;
+
+&lt;p&gt;这个游戏还有挑战模式和勇敢者模式。一开始是锁定的，需要通关后才能解锁。挑战模式就是你可以选一关来玩，游戏会记录你行走的步数。勇敢者模式比较有意思，
+都是一些非常小的关卡，没有数字提示全凭运气。但是肯定有一条路径能通过。并且，还有一些关卡是黑暗的，玩起来更刺激&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i1.tietuku.com/b95ded5e5b11760c.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个游戏是有改进的可能的。虽然制作粗糙，但是整个游戏通过一种巧妙的设计大大的增加了扫雷游戏的刺激性。我个人认为应该精简道具系统和引导系统，
+并且提高美术和音乐整体的制作标准，这个游戏会是一个好游戏的。&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 06 May 2015 00:00:00 +0800</pubDate>
+        <link>http://thebgame.com/2015/05/06/TongTianTa.html</link>
+        <guid isPermaLink="true">http://thebgame.com/2015/05/06/TongTianTa.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>KIKIKA：两个小时做出的游戏</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://www.mumayi.com/android-615448.html&quot;&gt;游戏下载地址(Android Only)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;也许，这是最简单的游戏了把。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://imgb.mumayi.com/android/img_mumayi/2014/05/06/61/615448/nologo/nologo_pic_615448_1bc5bd.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一年以前我花了两个小时做了这个游戏。当时我正在一家网游公司制作一款舞蹈类游戏。我觉得舞蹈类游戏的
+本质实际上就是带节奏的打地鼠。所以我花了两个小时做了这个游戏，公司同事说这个东西算没有节奏的舞蹈类游戏，
+而我老婆说这就是打地鼠。&lt;/p&gt;
+
+&lt;p&gt;我后来想过丰富这个游戏的玩法，但是后来出了一个游戏叫做别踩白块，我自己就放弃了。&lt;/p&gt;
+
+&lt;p&gt;欢迎大家和我交流&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 04 May 2015 03:09:11 +0800</pubDate>
-        <link>http://thebgame.com/jekyll/update/2015/05/04/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://thebgame.com/jekyll/update/2015/05/04/welcome-to-jekyll.html</guid>
+        <link>http://thebgame.com/jekyll/update/2015/05/04/kikika.html</link>
+        <guid isPermaLink="true">http://thebgame.com/jekyll/update/2015/05/04/kikika.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>开坑宣言</title>
+        <description>&lt;p&gt;这里的内容与网站自述相同。放在这里作为开坑宣言&lt;/p&gt;
+
+&lt;p&gt;B级游戏的概念来自于电影行业的B级片。所谓B级片，是指那些由于缺乏资金，粗制滥造，
+并使用了大量的业余演员和非常低的制作水平，但是又很有特色和创意的片子。&lt;/p&gt;
+
+&lt;p&gt;B级游戏不是独立游戏。目前游戏圈里的独立游戏，事实上也是非常专业，完整度非常高，品质非常出众的游戏。
+比如游戏业内非常著名的MineCraft, Braid, World of Goo等等，其品质甚至不输给大公司大制作。&lt;/p&gt;
+
+&lt;p&gt;很显然，B级游戏比独立游戏更加的草根，更加的卑微。我自己认为自己就是Ｂ级游戏开发者的一员，我们这些人
+没有天使投资，没有商业头脑。往往都是顶住巨大的工作压力，从自己的业余时间中挤出一点点的时间做一点
+自己喜欢的东西。我们做出来的东西如果一旦投入市场就只能用悲壮来形容，但是我们依然会这样做下去。&lt;/p&gt;
+
+&lt;p&gt;所以，我发起了这个小站，希望能给这些飘在游戏行业中的孤魂野鬼一个家园。&lt;/p&gt;
+
+&lt;p&gt;欢迎大家投稿到我的邮箱　13609817879@163.com，任何你认为值得纪念的，但是已经被大家忘记的游戏都可以。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 04 May 2015 03:09:11 +0800</pubDate>
+        <link>http://thebgame.com/jekyll/update/2015/05/04/TheStart.html</link>
+        <guid isPermaLink="true">http://thebgame.com/jekyll/update/2015/05/04/TheStart.html</guid>
         
         
         <category>jekyll</category>
