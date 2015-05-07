@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>B级游戏站</title>
+    <title>无名级游戏站</title>
     <description>此网站使用Jekyll技术在GithubPage上构建，用来宣传那些极少有人知晓的，并不优秀，  甚至并不完整，但是非常有想法的游戏。
 </description>
     <link>http://thebgame.com/</link>
     <atom:link href="http://thebgame.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 May 2015 07:35:21 +0800</pubDate>
-    <lastBuildDate>Wed, 06 May 2015 07:35:21 +0800</lastBuildDate>
+    <pubDate>Thu, 07 May 2015 19:51:59 +0800</pubDate>
+    <lastBuildDate>Thu, 07 May 2015 19:51:59 +0800</lastBuildDate>
     <generator>Jekyll v3.0.0.pre.beta2</generator>
     
       <item>
-        <title>Tongtianta</title>
-        <description>&lt;p&gt;﻿—
-layout: post
-title:  “密室逃脱之通天塔”
-date:   2015-05-06 06:52:11
-categories: jekyll update
-—
-&lt;a href=&quot;http://pan.baidu.com/s/1nt9mKGD&quot;&gt;游戏下载地址&lt;/a&gt;
-&lt;a href=&quot;http://pan.baidu.com/s/1bnjiICn&quot;&gt;模拟器&lt;/a&gt;
-&lt;a href=&quot;http://v.youku.com/v_show/id_XOTQ4NDExOTQ4.html?from=s1.8-1-1.2&quot;&gt;一分钟试玩视频&lt;/a&gt;&lt;/p&gt;
+        <title>密室逃脱之通天塔</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1nt9mKGD&quot;&gt;游戏下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1bnjiICn&quot;&gt;模拟器&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://v.youku.com/v_show/id_XOTQ4NDExOTQ4.html?from=s1.8-1-1.2&quot;&gt;一分钟试玩视频&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://i1.tietuku.com/bd7186f6eebd85b5.jpg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
@@ -52,10 +48,14 @@ categories: jekyll update
 并且提高美术和音乐整体的制作标准，这个游戏会是一个好游戏的。&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 06 May 2015 00:00:00 +0800</pubDate>
-        <link>http://thebgame.com/2015/05/06/TongTianTa.html</link>
-        <guid isPermaLink="true">http://thebgame.com/2015/05/06/TongTianTa.html</guid>
+        <pubDate>Wed, 06 May 2015 14:52:11 +0800</pubDate>
+        <link>http://thebgame.com/jekyll/update/2015/05/06/TongTianTa.html</link>
+        <guid isPermaLink="true">http://thebgame.com/jekyll/update/2015/05/06/TongTianTa.html</guid>
         
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
         
       </item>
     
