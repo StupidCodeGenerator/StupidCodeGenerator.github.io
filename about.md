@@ -1,18 +1,19 @@
 ---
 layout: page
-title: 自述
+title: About Pixyll
 permalink: /about/
 ---
 
-无名游戏站原名B级游戏站，域名改为www.nonamegames.org
+This Jekyll theme was crafted with <3 by [John Otander](http://johnotander.com)
+([@4lpine](https://twitter.com/4lpine)).
 
-B级游戏的概念来自于电影行业的B级片。所谓B级片，是指那些由于缺乏资金，粗制滥造，
-并使用了大量的业余演员和非常低的制作水平，但是又很有特色和创意的片子。
+Checkout the [Github repository](https://github.com/johnotander/pixyll) to download it,
+request a feature, report a bug, or contribute. It's free, and open source
+([MIT](http://opensource.org/licenses/MIT)).
 
-但是我后来发现B级游戏的范围还是太小了，并不能达到我开设这个小站的目的。游戏行业有太多的怀才不遇，
-有太多的梦想，情怀，执着等待着释放。所以我决定放大这个网站包含的范围，注册了新的域名nonamegames.org，
-将B级游戏站改名为无名游戏站。
+Thanks to the following:
 
-欢迎大家投稿到我的邮箱　c@thebgame.com，任何你认为值得纪念的，但是已经被大家忘记的游戏都可以。
-
-有梦想的人永远值得敬畏！
+* [BASSCSS](http://basscss.com)
+* [Jekyll](http://jekyllrb.com)
+* [Refills](http://refills.bourbon.io/)
+* [Solarized](http://ethanschoonover.com/solarized)
