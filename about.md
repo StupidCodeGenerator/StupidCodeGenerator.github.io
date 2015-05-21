@@ -1,19 +1,14 @@
 ---
 layout: page
-title: About Pixyll
+title: 王晨的Blog
 permalink: /about/
 ---
 
-This Jekyll theme was crafted with <3 by [John Otander](http://johnotander.com)
-([@4lpine](https://twitter.com/4lpine)).
+此站点一开始本想作为B级游戏宣传站，但是后来随着自己对这个问题理解的飘忽不定最终将其迁移到[nonamegames.org][nonamegames]。
+此站点从今开始作为我自己的个人Blog。内容如同本人一样飘忽不定。
 
-Checkout the [Github repository](https://github.com/johnotander/pixyll) to download it,
-request a feature, report a bug, or contribute. It's free, and open source
-([MIT](http://opensource.org/licenses/MIT)).
+联系方式:
 
-Thanks to the following:
+c@thebgame.com
 
-* [BASSCSS](http://basscss.com)
-* [Jekyll](http://jekyllrb.com)
-* [Refills](http://refills.bourbon.io/)
-* [Solarized](http://ethanschoonover.com/solarized)
+[nonamegames]:www.nonamegames.org
