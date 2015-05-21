@@ -1,26 +1,9 @@
 ---
 layout:     post
-title:      Hello, Pixyll
-date:       2014-06-11 15:31:19
-summary:    Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
-categories: jekyll pixyll
+title:      游记之一：概览
+date:       2015-05-22 15:31:19
+summary:    成都，重庆，武隆，杭州（中转），绍兴，乌镇，上海
+categories: 游记
 ---
 
-Hello.
-
-Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff. It's mobile _first_, fluidly responsive, and delightfully lightweight.
-
-It's pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices.
-
-<blockquote>
-  <p>
-    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
-  </p>
-  <footer><cite title="Antoine de Saint-Exupéry">Antoine de Saint-Exupéry</cite></footer>
-</blockquote>
-
-## Where is it?
-
-Checkout the [Github repository](https://github.com/johnotander/pixyll) to download it, request a feature, or report a bug.
-
-It's free, and open source ([MIT](http://opensource.org/licenses/MIT)).
+出发之前，没想到这几天能走这么多地方。本来想的就是去成都吃几天小吃就回来的。
