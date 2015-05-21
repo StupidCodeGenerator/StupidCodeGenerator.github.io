@@ -1,10 +1,10 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title:       王晨的Blog
+email:       c@thebgame.com
+author:      王晨
+description: "使用GithubPage以及Jekyll构建，感谢John Otander提供的Jekyll主题"
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "http://www.thebgame.com"
 
 # Google analytics
 google_analytics:
