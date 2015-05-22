@@ -23,7 +23,7 @@ compress_html:
     envs: [travis]
 # theme
 noita:
-  name: StupidCodeGenerator's Personal Site
+  name: StupidCodeGenerator's Personal Blog
   description: Jekyll theme built with Foundation
   author:
     name: Anatol Broder
