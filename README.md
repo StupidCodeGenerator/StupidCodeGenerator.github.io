@@ -1,85 +1,37 @@
-Jekyll Clean
-============
+# Simply Grey
+Simply Grey is a nice, easy on the eyes Jekyll theme that makes great use of grey colours. 
 
-* Get it from [github](https://github.com/scotte/jekyll-clean).
-* See the [live demo](https://scotte.github.io/jekyll-clean).
-* See it [in action on my own blog](https://scotte.github.io).
+![Screenshot of Simply Grey](http://i.imgur.com/sKpj8Oz.png)
 
-A simple and clean Jekyll theme using [bootstrap](http://getbootstrap.com)
-(not to be confused with jekyll-bootstrap) that's easy to modify and very
-modular in component and element reuse.
+## Installation
+There are a few requirements to using and installing the Simply Grey theme.
 
-It uses Disqus for comments and includes Google Analytics support. Both of
-these features are disabled by default and can be enabled via \_config.yml. You
-can also rip this code out of the templates if you like (footer.html and post.html).
-The beauty of Jekyll - keep things clean... Jekyll Clean!
+1. You must have Jekyll installed. If you have no done this, do it by executing the following code. 
+`gem install jekyll`
 
-The theme works well on mobile phones, using a collapsable nav bar and hiding the
-sidebar. The links pane in the sidebar is available on mobile through the nav menu,
-and you can do the same thing for any other sections added to the sidebar.
+2. You must have git installed. If you do not have this, install it on your system by using your package manager. For example, in Debian, type 
+`sudo apt-get install git`
 
-Don't forget to occassionally merge against my upstream repository so you can get
-the latest changes. Pull requests are encouraged and accepted!
+Once you have done this, installation is pretty easy.
 
-Installation
-============
+Simply clone the repository
 
-If you don't have a blog already on github, start by cloning this repository.
-Best to do that directly on github and then clone that down to your computer.
+`git clone https://github.com/mondss/simplygrey-jekyll.git`
 
-If you already do have a blog, You can certainly apply this theme to your existing
-blog in place, but then you won't be able to merge as the theme changes. If you
-re-apply your blog history on top of this theme's **gh-pages** branch, it's then
-easy to update to the latest version of the theme. You also don't want to have to
-deal with resolving old conflicts from your existing history, so you may wish to to
-push your existing master off to a new branch so you have the old history and start
-a new branch with this as the start, merging in your \_posts and other assets (after
-git rm'ing the current \_posts.
+and serve the blog up so people can see it
 
-Not ideal, but you have to make a choice - either apply it manually or base your
-blog off this theme's branch. Either way it will work, and both have their own
-pros and cons.
+`cd simplygrey-jekyll; jekyll serve`
 
-You can setup an upstream tracking repository like so:
+## Configuring SimplyGrey
+The SimplyGrey theme is actually very easy to configure.
 
-```
-$ git remote add upstream git@github.com:scotte/jekyll-clean.git
-```
+### Adding more links to the navigation bar
+1. Open the _config.yml file
+2. Add some more values to the urls hash like the others that already exist there.
 
-And now when you wish to merge your own branch onto the latest version of the
-theme, simply do:
+### Changing the site name
+1. Open the _config.yml file
+2. Change the site name
 
-```
-$ git fetch upstream
-$ git merge upstream/gh-pages
-```
-
-Of course you will have to resolve conflicts for \_config.yml, \_includes/links-list.html,
-and \_posts, and so on, but in practice this is pretty simple.
-
-This is how I maintain my own blog which is based on this theme. The old history is
-sitting in an **old-master** branch that I can refer to when I need to.
-
-License
-=======
-
-The content of this theme is distributed and licensed under a
-![License Badge](/images/cc_by_88x31.png)
-[Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode)
-
-    This license lets others distribute, remix, tweak, and build upon your work,
-    even commercially, as long as they credit you for the original creation. This
-    is the most accommodating of licenses offered. Recommended for maximum
-    dissemination and use of licensed materials.
-
-In other words: you can do anything you want with this theme on any site, just please
-provide a link to [the original theme on github](https://github.com/scotte/jekyll-clean)
-so I get credit for the original design. Beyond that, have at it!
-
-This theme includes the following files which are the properties of their
-respective owners:
-
-* js/bootstrap.min.js - [bootstrap](http://getbootstrap.com)
-* css/bootstrap.min.css - [bootstrap](http://getbootstrap.com)
-* js/jquery.min.js - [jquery](https://jquery.com)
-* images/cc_by_88x31.png - [creative commons](https://creativecommons.org)
+### Changing the logo/picture image
+1. Drop a 75x75 image into the img directory.
