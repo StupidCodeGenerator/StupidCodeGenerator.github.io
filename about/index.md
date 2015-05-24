@@ -1,51 +1,15 @@
 ---
 layout: page
-title: About
+title: 自述
 ---
 
-Noita is a [Jekyll][0] theme built with the responsive front-end framework [Foundation][1]. The theme is free and fully compatible with [Github Pages][2].
+原来的B级游戏站更名为无名游戏站，网站迁移到www.nonamegames.org
 
-## Quick Guide
+无名游戏站更新会放缓但是不会停。
 
-The fastest way is to use Github Pages:
+本人网络称号挖坑男，挖坑无数弃坑无数。在程序领域野心勃勃但能力有限。什么都想学，什么都在学。有一段时间好悬得了精神病，
+但是现在基本行为正常。
 
-1. Fork the [repository][3].
-1. Set up your [custom domain][4].
-1. Start blogging.
+现就职于沈阳光音网视科技有限公司，从事棋牌游戏AI开发工作，也因此恶补一切关于人工智能的知识。
 
-## Performance
-
-Performance tests made with Web Pagetest:
-
-* [Mobile][mobile]
-* [Desktop][desktop]
-
-## Validation
-
-[![Build Status][7]][8]
-
-Noita creates pages with valid:
-
-* markup;
-* internal and external links;
-* image references.
-
-## Dependencies
-
-Noita contains free libraries:
-
-* [Foundation][1]
-* [jQuery][9]
-* [Normalize][10]
-
-[0]: http://jekyllrb.com/
-[1]: http://foundation.zurb.com/
-[2]: https://pages.github.com/
-[3]: https://github.com/penibelst/jekyll-noita
-[4]: https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages
-[mobile]: http://www.webpagetest.org/result/150114_90_4PT/
-[desktop]: http://www.webpagetest.org/result/150114_AN_4N1/
-[7]: https://travis-ci.org/penibelst/jekyll-noita.svg?branch=gh-pages
-[8]: https://travis-ci.org/penibelst/jekyll-noita
-[9]: http://jquery.com/
-[10]: http://necolas.github.io/normalize.css/
+本人已婚，妻子是一名无名画家，感谢他给我的鼓励和支持。

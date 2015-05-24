@@ -34,12 +34,10 @@ noita:
   topbar:
     toggle: Menu
     right:
-      - name: About
+      - name: 自述
         url: /about/
-      - name: Guide
-        url: /guide/
       - name: Blog
         url: /blog/
       - name: Repository
-        url: https://github.com/penibelst/jekyll-noita
+        url: https://github.com/stupidcodegenerator
         class: small button
