@@ -1,5 +1,5 @@
 ---
-title: "思维笔记：为什么程序员不能像艺术家一样生活"
+title: "思维笔记：程序员是否能像艺术家一样生活？"
 layout: post
 description: "要么编程不是艺术，要么我们说的艺术不是真正的艺术"
 robots: none
