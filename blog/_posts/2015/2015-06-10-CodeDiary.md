@@ -18,7 +18,7 @@ robots: none
 后来我觉得我需要一个软件能够方便的帮我记录编程中想要记下的东西，但是我并没有太好的选择。 
 现有的笔记软件都太大，太复杂，有云同步功能。 如果要编写保密的东西，云笔记完全无用。
 
-**所以我花了一点时间写了一个小工具：CodeDiary**
+**所以我花了一点时间写了一个小工具：[CodeDiary](https://github.com/StupidCodeGenerator/CodeDiary)**
 
 ![img](http://i1.tietuku.com/8208f9eda533cb75.png)
 
