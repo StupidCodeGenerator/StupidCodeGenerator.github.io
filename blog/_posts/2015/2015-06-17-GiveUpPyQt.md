@@ -7,7 +7,7 @@ robots: none
 
 ![img](http://www.collegeteacher.org/csci101/resource_programming/pics/progLanguages.jpg)
 
-*“这世界上的编程语言分为两类，一类是被人骂的，一类是没人用的”* ——Bjarne Stroustrup
+*“这世界上的编程语言分为两类，一类是被人骂的，一类是没人用的” ——Bjarne Stroustrup*
 
 起因是因为Windows在坚持了两年以后终于到了要重装的程度，而我电脑里面还有一套Linux系统就干脆把项目
 移植到Linux下。并且Linux的学习可以让我增强很多方面的知识，并且积累很多经验。
@@ -20,7 +20,7 @@ robots: none
 开发的过程其实并不简单，每一个步骤都依赖于一个完全独立的软件，相互之间独立更新独立发布
 完全没有稳定性可言。
 
-*所以，在走了大量的弯路以后决定使用Qt*
+**所以，在走了大量的弯路以后决定使用Qt**
 
 Qt的优势在于他提供了一个非常标准的跨平台开发环境。使用QtCreator可以非常方便的设计UI并且编写
 UI相关的代码。并且使用世界通用的C++作为编程语言。虽然C++的开发难度比脚本语言要高，但是由于
