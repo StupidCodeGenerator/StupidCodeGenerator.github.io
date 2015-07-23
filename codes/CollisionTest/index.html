@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CollisionTest</title>
+        <style>/* Removes Mobile Highlight */ *{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}</style>
+    </head>
+    <body>
+        <canvas id="MarioStage" width="800" height="600"></canvas>
+        <script src="CollideUtil.js"></script>
+        <script>
+            canvas = document.getElementById('MarioStage');
+            context = canvas.getContext('2d');
+            var loop = function() {
+                update();
+                render();
+                window.requestAnimationFrame(loop, canvas);
+            }
+            window.requestAnimationFrame(loop, canvas);
+
+            //////////////////////////////////////////////////////////////////    
+
+            var gravity = 0.1
+
+            tester = new Tester(200, 200, 32, 32, 2.7, 0);
+            tester2 = new Tester(250, 250, 32, 32, 3, 0);
+            collider = new Collider(450, 500, 64, 64);
+
+            function Tester(initX, initY, w, h, initVx, initVy){
+                this.x = initX;
+                this.y = initY;
+                this.xlast = this.x;
+                this.ylast = this.y;
+                this.vx = initVx;
+                this.vy = initVy;
+                this.w = w;
+                this.h = h;
+                this.checkCollide = function(tx,ty,tw,th){
+                    var isCollide = IsCollideHappen(this.x, this.y, this.w, this.h, tx, ty, tw, th);
+                    if(isCollide){
+                        var collideDirection = CollideDirection(this.x, this.y, this.w, this.h, tx,ty,tw,th, this.xlast, this.ylast);
+                        var collidepoint = CollidePoint(this.x, this.y, this.w, this.h, tx,ty, tw, th, this.xlast,this.ylast,collideDirection);
+                        if(collideDirection === "left" || collideDirection === "right"){
+                            this.x = collidepoint.x;
+                            this.vx = 0;
+                        } else {
+                            this.y = collidepoint.y;
+                            this.vy = 0;
+                        }
+                    }
+                }
+                this.update = function(gravity, collider){
+                    this.xlast = this.x;
+                    this.ylast = this.y;
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.vy += gravity;
+                    this.checkCollide(collider.x, collider.y, collider.w, collider.h);
+                }
+                this.draw = function(){
+                    DrawSmallRect(this.x, this.y, this.w, this.h);
+                }
+            }
+
+            function Collider(x, y, w, h){
+                this.x = x;
+                this.y = y;
+                this.w = w;
+                this.h = h;
+                this.draw = function(){
+                    DrawSmallRect(this.x, this.y, this.w, this.h);
+                }
+            }
+
+            function update(){
+                tester.update(gravity,collider);
+                tester2.update(gravity,collider);
+            }
+
+            function render(){
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                tester.draw();
+                tester2.draw();
+                collider.draw();                
+            }
+
+            function DrawSmallRect(x, y, w, h){
+                context.beginPath();
+                context.rect(x - w/2, y - h/2, w, h);
+                context.lineWidth = 1;
+                context.strokeStyle = 'black';
+                context.stroke();
+            }
+        </script>
+    </body>
+</html>
