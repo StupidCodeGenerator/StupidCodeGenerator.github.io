@@ -3,8 +3,11 @@
     <head>
         <title>CollisionTest</title>
         <style>/* Removes Mobile Highlight */ *{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}</style>
+        <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.3, maximum-scale=2.0,    user-scalable=yes" />  
+        <meta content="yes" name="apple-mobile-web-app-capable" />  
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />  
+        <meta content="telephone=no" name="format-detection" />  
     </head>
-    <meta name="viewport" content="width=device-width,user-scalable=no" />
     <body>
         <canvas id="MarioStage" width="240" height="320"></canvas>
         <script>    
@@ -23,7 +26,7 @@
 
             function render(){
                 context.clearRect(0, 0, canvas.width, canvas.height);
-                DrawSmallRect(10, 10, canvas.width - 20, canvas.height - 20, "green");
+                DrawSmallRect(10, 10, canvas.width - 20, canvas.height - 20, "red");
             }
 
             function DrawSmallRect(x, y, w, h, fill){
