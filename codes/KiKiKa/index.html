@@ -22,10 +22,7 @@
 
             function render(){
                 context.clearRect(0, 0, canvas.width, canvas.height);
-                DrawSmallRect(15, 15, 220, 375 , "red");
-                DrawSmallRect(250, 15, 220, 375, "red");
-                DrawSmallRect(15, 410, 220, 375, "red");
-                DrawSmallRect(250, 410, 220, 375, "red");
+                DrawSmallRect(10, 10, canvas.width - 20, canvas.height - 20, "yellow");
             }
 
             function DrawSmallRect(x, y, w, h, fill){
