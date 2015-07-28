@@ -1,37 +1,69 @@
 <!DOCTYPE html>
-<html>
-    <head>
-           
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <title>CollisionTest</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,target-   densitydpi=device-dpi">    
-        <meta name="apple-mobil e-web-app-capable" content="yes">    
+<html manifest="offline.appcache">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>有多远滚多远-68微游戏</title>
     
-        <meta name="full-screen" content="true">
-        <meta name="screen-orientation" content="portrait">
-        <meta name="x5-fullscreen" content="true">
-        <meta name="360-fullscreen" content="true">
-         <style>
-                body {
-                    text-align: center;
-                    background: #000000;
-                    padding: 0;
-                    border: 0;
-                    margin: 0;
-                    height: 100%;
-                }
+    <!-- Standardised web app manifest -->
+    <link rel="manifest" href="app.manifest" />
     
-            html {
-                -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
-            }
-        </style>
-    </head>
-    <body>
-        <div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;" id="gameDiv">
-            <canvas id="gameCanvas" width="480" height="800" style="background-color: #000000"></canvas>
-        </div>
-        <script>    
+    <!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" sizes="256x256" href="icon-256.png" />
+    <meta name="HandheldFriendly" content="true" />
+    
+    <!-- Chrome for Android web app tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" sizes="256x256" href="icon-256.png" />
+
+    <!-- All margins and padding must be zero for the canvas to fill the screen. -->
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            touch-action: none;
+            -ms-touch-action: none;
+        }
+        canvas {
+            touch-action-delay: none;
+            touch-action: none;
+            -ms-touch-action: none;
+        }
+    </style>
+    <script type="text/javascript" src="http://static.play68.com/js/play68_sdk.js"></script>
+<script language="javascript" type="text/javascript" src="js/play68.js"></script>
+
+</head> 
+ 
+<body> 
+    <div id="fb-root"></div>
+    <!-- The canvas must be inside a div called c2canvasdiv -->
+    <div id="gameCanvasdiv">
+        <!-- The canvas the project will render to.  If you change its ID, don't forget to change the
+        ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
+        <canvas id="gameCanvas" width="480" height="854">
+            <!-- This text is displayed if the visitor's browser does not support HTML5.
+            You can change it, but it is a good idea to link to a description of a browser
+            and provide some links to download some popular HTML5-compatible browsers. -->
+            <h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org">What is a browser?</a>
+            <br/><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
+            <a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
+            <a href="http://www.google.com/chrome/">Google Chrome</a><br/>
+            <a href="http://www.apple.com/safari/download/">Apple Safari</a><br/>
+            <a href="http://www.google.com/chromeframe">Google Chrome Frame for Internet Explorer</a><br/></h1>
+        </canvas>
+        
+    </div>
+    
+    <script>
             canvas = document.getElementById('gameCanvas');
             context = canvas.getContext('2d');
             var loop = function() {
@@ -59,7 +91,6 @@
                 context.strokeStyle = 'red';
                 context.stroke();
             }
-        </script>
-    </body>
-    
-</html>
+    </script>
+</body> 
+</html> 
