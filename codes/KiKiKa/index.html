@@ -46,7 +46,7 @@
 
             function render(){
                 context.clearRect(0, 0, canvas.width, canvas.height);
-                DrawSmallRect(20, 20, canvas.width - 40, canvas.height - 40, "yellow");
+                DrawSmallRect(0, 0, canvas.width, canvas.height, "white");
             }
 
             function DrawSmallRect(x, y, w, h, fill){
@@ -54,7 +54,7 @@
                 context.rect(x , y , w, h);
                 context.fillStyle = fill;
                 context.fill();
-                context.lineWidth = 7;
+                context.lineWidth = 0;
                 context.strokeStyle = 'white';
                 context.stroke();
             }
