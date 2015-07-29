@@ -397,7 +397,16 @@ function render() {
 		s_numberB.draw(ctx, null, 20, score, width2);
 
 	}
+	DrawSmallRect(5, 5, canvas.width - 10, canvas.height - 10);
 }
+
+function DrawSmallRect(x, y, w, h){
+                ctx.beginPath();
+                ctx.rect(x, y, w, h);
+                ctx.lineWidth = 1;
+                ctx.strokeStyle = 'black';
+                ctx.stroke();
+            }
 
 // start and run the game
 main();
