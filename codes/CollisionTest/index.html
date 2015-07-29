@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">    
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
         <title>CollisionTest</title>
-        <style>/* Removes Mobile Highlight */ *{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}</style>
+        <style>
+            canvas {
+                display: block;
+                position: absolute;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        </style>
     </head>
     <body>
-        <canvas id="MarioStage" width="800" height="600"></canvas>
         <script src="CollideUtil.js"></script>
         <script>
-            canvas = document.getElementById('MarioStage');
+            // create canvas and set width/height
+            canvas = document.createElement("canvas");
+        
+            width = window.innerWidth;
+            height = window.innerHeight;
+
+            if (width >= 500) {
+                width  = 320;
+                height = 480;
+                canvas.style.border = "1px solid #000";
+            }
+    
+            canvas.width = width;
+            canvas.height = height;
+
+            if (!(!!canvas.getContext && canvas.getContext("2d"))) {
+                    alert("Your browser doesn't support HTML5, please update to latest version");
+            }
             context = canvas.getContext('2d');
+            document.body.appendChild(canvas);
+
             var loop = function() {
                 update();
                 render();
@@ -21,9 +53,9 @@
 
             var gravity = 0.1
 
-            tester = new Tester(200, 200, 32, 32, 2.7, 0);
-            tester2 = new Tester(250, 250, 32, 32, 3, 0);
-            collider = new Collider(450, 500, 64, 64);
+            tester = new Tester(30, 30, 16, 16, 2, 0);
+            tester2 = new Tester(50, 50, 16, 16, 2.2, 0);
+            collider = new Collider(200, 300, 32, 32);
 
             function Tester(initX, initY, w, h, initVx, initVy){
                 this.x = initX;
@@ -86,7 +118,7 @@
             function DrawSmallRect(x, y, w, h){
                 context.beginPath();
                 context.rect(x - w/2, y - h/2, w, h);
-                context.lineWidth = 1;
+                context.lineWidth = 3;
                 context.strokeStyle = 'black';
                 context.stroke();
             }
