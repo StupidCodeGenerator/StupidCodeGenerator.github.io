@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">    
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <title>CollisionTest</title>
+        <style>
+            canvas {
+                display: block;
+                position: absolute;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="CollideUtil.js"></script>
+        <script>
+            // create canvas and set width/height
+            canvas = document.createElement("canvas");
+        
+            width = window.innerWidth;
+            height = window.innerHeight;
+
+            if (width >= 500) {
+                width  = 320;
+                height = 480;
+                canvas.style.border = "1px solid #000";
+            }
+    
+            canvas.width = width;
+            canvas.height = height;
+
+            if (!(!!canvas.getContext && canvas.getContext("2d"))) {
+                    alert("Your browser doesn't support HTML5, please update to latest version");
+            }
+            context = canvas.getContext('2d');
+            document.body.appendChild(canvas);
+
+            var loop = function() {
+                update();
+                render();
+                window.requestAnimationFrame(loop, canvas);
+            }
+            window.requestAnimationFrame(loop, canvas);
+
+            //////////////////////////////////////////////////////////////////    
+
+            var gravity = 0.1
+
+            tester = new Tester(30, 30, 16, 16, 2, 0);
+            tester2 = new Tester(50, 50, 16, 16, 2.1, 0);
+            collider = new Collider(200, 300, 32, 32);
+
+            function Tester(initX, initY, w, h, initVx, initVy){
+                this.x = initX;
+                this.y = initY;
+                this.xlast = this.x;
+                this.ylast = this.y;
+                this.vx = initVx;
+                this.vy = initVy;
+                this.w = w;
+                this.h = h;
+                this.checkCollide = function(tx,ty,tw,th){
+                    var isCollide = IsCollideHappen(this.x, this.y, this.w, this.h, tx, ty, tw, th);
+                    if(isCollide){
+                        var collideDirection = CollideDirection(this.x, this.y, this.w, this.h, tx,ty,tw,th, this.xlast, this.ylast);
+                        var collidepoint = CollidePoint(this.x, this.y, this.w, this.h, tx,ty, tw, th, this.xlast,this.ylast,collideDirection);
+                        if(collideDirection === "left" || collideDirection === "right"){
+                            this.x = collidepoint.x;
+                            this.vx = 0;
+                        } else {
+                            this.y = collidepoint.y;
+                            this.vy = 0;
+                        }
+                    }
+                }
+                this.update = function(gravity, collider){
+                    this.xlast = this.x;
+                    this.ylast = this.y;
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.vy += gravity;
+                    this.checkCollide(collider.x, collider.y, collider.w, collider.h);
+                }
+                this.draw = function(){
+                    DrawSmallRect(this.x, this.y, this.w, this.h);
+                }
+            }
+
+            function Collider(x, y, w, h){
+                this.x = x;
+                this.y = y;
+                this.w = w;
+                this.h = h;
+                this.draw = function(){
+                    DrawSmallRect(this.x, this.y, this.w, this.h);
+                }
+            }
+
+            function update(){
+                tester.update(gravity,collider);
+                tester2.update(gravity,collider);
+            }
+
+            function render(){
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                tester.draw();
+                tester2.draw();
+                collider.draw();                
+            }
+
+            function DrawSmallRect(x, y, w, h){
+                context.beginPath();
+                context.rect(x - w/2, y - h/2, w, h);
+                context.lineWidth = 3;
+                context.strokeStyle = 'black';
+                context.stroke();
+            }
+        </script>
+    </body>
+</html>
