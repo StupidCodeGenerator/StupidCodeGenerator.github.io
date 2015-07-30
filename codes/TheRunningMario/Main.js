@@ -33,7 +33,7 @@ function Main(){
 }
 
 function Init(){
-	LoadImages({mapTile:"./res/maptile.png", spriteImage:"./res/sprites.png"}, LoadImageComplete);
+	LoadImages({mapTile:"./res/maptile.png", spriteImage:"./res/Sprites.png"}, LoadImageComplete);
 }
 
 function LoadImages(sources, callback) {
