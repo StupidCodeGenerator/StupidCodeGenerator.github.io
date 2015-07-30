@@ -6,6 +6,8 @@ var map;
 
 var mario;
 
+var frameCount=0;
+
 function Main(){
     // create canvas and set width/height
     canvas = document.createElement("canvas");
@@ -74,5 +76,7 @@ function Update(){
 }
 
 function Render(){
+    frameCount += 1;
     map.Draw(context);
+    context.fillText(frameCount,1,20); 
 }
