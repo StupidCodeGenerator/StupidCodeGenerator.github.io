@@ -55,7 +55,7 @@ function Map(image, mapData){
     this.x = 0;
     this.y = 0;
     this.width = this.mapData.layers[0].width * this.mapData.tilewidth;
-    this.Draw = function (cxt){
+    this.Draw = function (cxt, screenWidth){
         var mWidth = this.mapData.layers[0].width;
         var mHeight = this.mapData.layers[0].height;
         var numOfTilesX = this.mapData.nextobjectid - 1;
@@ -67,8 +67,10 @@ function Map(image, mapData){
             var dataY = (((data[i] - 1) / numOfTilesX) | 0) * tileHeight;
             var tileX = (i % mWidth) * tileWidth;
             var tileY = ((i / mWidth) | 0) * tileHeight;
-            cxt.drawImage(this.image, dataX, dataY, tileWidth, tileHeight, 
-                tileX + this.x, tileY + this.y, tileWidth, tileHeight);
+            if(dataX > 0 && dataX < screenWidth){
+                cxt.drawImage(this.image, dataX, dataY, tileWidth, tileHeight, 
+                    tileX + this.x, tileY + this.y, tileWidth, tileHeight);    
+            }
         }
     }
 }
