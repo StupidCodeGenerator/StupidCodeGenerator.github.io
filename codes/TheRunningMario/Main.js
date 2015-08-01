@@ -2,9 +2,10 @@ var canvas;
 var context;
 
 var images;
-var map;
 
 var mario;
+
+var mapX = 0;
 
 function Main(){
     // create canvas and set width/height
@@ -31,7 +32,7 @@ function Main(){
 }
 
 function Init(){
-	LoadImages({mapTile:"./res/maptile.png", spriteImage:"./res/Sprites.png"}, LoadImageComplete);
+	LoadImages({map:"./res/map.png", spriteImage:"./res/Sprites.png"}, LoadImageComplete);
 }
 
 function LoadImages(sources, callback) {
@@ -54,8 +55,6 @@ function LoadImages(sources, callback) {
 }
 
 function LoadImageComplete(){
-    map = new Map(images.mapTile, TileMaps["MapData"]);
-    map.y = canvas.height - (map.mapData.layers[0].height * map.mapData.tileheight);
     mario = new Mario(100, 300, 0, 0, 0, images.spriteImage);
     Run();
 }
@@ -70,9 +69,8 @@ function Run() {
 }
 
 function Update(){
-    map.x -= 3
 }
 
 function Render(){
-    map.Draw(context, canvas.width);
+    context.drawImage(images.map, mapX-=3, 0);
 }
