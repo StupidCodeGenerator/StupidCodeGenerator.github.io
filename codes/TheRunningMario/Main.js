@@ -6,6 +6,7 @@ var images;
 var mario;
 
 var mapX = 0;
+var subImages = {};
 
 function Main(){
     // create canvas and set width/height
@@ -55,6 +56,13 @@ function LoadImages(sources, callback) {
 }
 
 function LoadImageComplete(){
+
+    var width = canvas.width;
+    var index = 0;
+    while(width < images.map.width){
+
+    }
+
     mario = new Mario(100, 300, 0, 0, 0, images.spriteImage);
     Run();
 }
@@ -72,5 +80,5 @@ function Update(){
 }
 
 function Render(){
-    context.drawImage(images.map, mapX-=3, 0);
+    //context.drawImage(images.map, mapX-=3, 0);
 }
