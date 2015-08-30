@@ -20,6 +20,8 @@
     </head>
     <body>
         <script src="fighter.js"></script>
+        <script src="Utils.js"></script>
+        <script src="buttonScan.js"></script>
         <script>
             // ----- Create Canvas ------
             canvas = document.createElement("canvas");
@@ -53,9 +55,11 @@
 
             var message;
 
-            var fighter = new Fighter(200, 300, 0.2);
+            var fighter = new Fighter(200, 300, 0);
+            var scanButton = new ScanButton(5,canvas.height - 45);
 
             function update(){
+                fighter.update();
             }
 
             function render(){
@@ -67,7 +71,9 @@
                 context.stroke();
                 context.restore();
                 fighter.draw();
-                writeMessage(canvas, message);
+                scanButton.draw();
+                writeMessage(canvas, message, 10, 10);
+                //writeMessage(canvas, "angle" + fighter.alpha, 10, 30);
             }
 
             function DrawSmallRect(x, y, w, h){
@@ -78,10 +84,10 @@
                 context.stroke();
             }
 
-            function writeMessage(canvas, message) {
+            function writeMessage(canvas, message, x, y) {
                 context.font = '7pt Small Fonts';
                 context.fillStyle = 'white';
-                context.fillText(message, 10, 25);
+                context.fillText(message, x, y);
             }
             function getMousePos(canvas, evt) {
                 var rect = canvas.getBoundingClientRect();
@@ -90,10 +96,14 @@
                     y: evt.clientY - rect.top
                 };
             }
-            canvas.addEventListener('mousemove', function(evt) {
+
+            // ----- Events -----
+            canvas.addEventListener('click', function(evt){
                 var mousePos = getMousePos(canvas, evt);
                 message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-            }, false);
+                fighter.targetX = mousePos.x;
+                fighter.targetY = mousePos.y;
+            },false); 
         </script>
     </body>
 </html>
