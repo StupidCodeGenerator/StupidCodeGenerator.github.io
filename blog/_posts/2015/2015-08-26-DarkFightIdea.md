@@ -12,3 +12,5 @@ robots: none
 在己方战机静默的情况下被动接受预警机发来的对手位置信息，从而在不暴露自己的情况下先敌制胜。
 
 但是我这里只是让对方都自己掌握开雷达的时机就可以了。
+
+项目Demo地址 http://www.thebgame.com/codes/RadarFight/index.html
