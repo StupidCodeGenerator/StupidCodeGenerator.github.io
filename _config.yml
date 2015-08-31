@@ -36,8 +36,3 @@ noita:
     right:
       - name: 自述
         url: /about/
-      - name: Blog
-        url: /blog/
-      - name: Repository
-        url: https://github.com/stupidcodegenerator
-        class: small button
