@@ -25,7 +25,7 @@ robots: none
 
 得到了这些数值，我们就可以计算出，对手进行了一个3Bet后，手里有AA的概率为
 
-P(AA|3Bet) = P(3Bet\|AA) * P(AA)/P(3Bet)
+P(AA\|3Bet) = P(3Bet\|AA) * P(AA)/P(3Bet)
 
 就这么简单，上数据。
 
