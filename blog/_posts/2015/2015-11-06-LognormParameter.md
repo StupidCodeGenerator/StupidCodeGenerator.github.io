@@ -9,7 +9,8 @@ robots: none
 
 所谓对数正态分布(Lognormal distribution)是指与随机事件成对数关系的事件服从正态分布，则当前随机事件服从对数正态分布。
 
-F(x;\mu \sigma )=\frac{1}{x\sigma\sqrt{2\pi }}{e}^{-\frac{(ln(x)-\mu)^2}{2\sigma^2}}
+\begin{F(x;\mu \sigma )=\frac{1}{x\sigma\sqrt{2\pi }}{e}^{-\frac{(ln(x)-\mu)^2}{2\sigma^2}}}
+
 
 一个比较明显的例子是股票市场的对数增长率和股价的关系。对数增长率表示为log(P[n]/P[n-1])，也就是当前样本和上一样本相除取对数。
 
