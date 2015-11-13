@@ -40,8 +40,6 @@ robots: none
 
 这个是用来打空间站的火箭，有点像美国的Delta-V。
 
-![img](http://imgsrc.baidu.com/forum/w%3D580%3Bcp%3Dtieba%2C10%2C403%3Bap%3D%BF%B2%B0%CD%C0%AD%CC%AB%BF%D5%BC%C6%BB%AE%B0%C9%2C90%2C411/sign=25d3d71f8882b9013dadc33b43b6ca07/6e4a6143fbf2b211793c7976c88065380cd78e6f.jpg)
-
 以及霍曼转移轨道。
 
 不过后来就没搞了，因为发现空间站没有什么用。好像确实也没有什么用，除了燃料站。我后来就一直在近地轨道挂两个燃料罐，给来往的飞船补给燃料。后来据说SpaceX
@@ -51,26 +49,57 @@ robots: none
 
 交会对接搞明白以后，登月就不用一次性把两个舱全打上去了，一次一个然后对接就好。第一次尝试的时候，我先搞了一个无人登月小艇来验证技术。
 
-![img](http://imgsrc.baidu.com/forum/w%3D580%3Bcp%3Dtieba%2C10%2C403%3Bap%3D%BF%B2%B0%CD%C0%AD%CC%AB%BF%D5%BC%C6%BB%AE%B0%C9%2C90%2C411/sign=07fab281f403738dde4a0c2a8320d321/cc63a113b07eca80dbc3f4c6932397dda0448344.jpg)
-
-因为有燃料站，所以直接打到燃料站上去，然后再弄一个返回舱上去，同样也是无人的。
-
-![img](http://imgsrc.baidu.com/forum/w%3D580%3Bcp%3Dtieba%2C10%2C403%3Bap%3D%BF%B2%B0%CD%C0%AD%CC%AB%BF%D5%BC%C6%BB%AE%B0%C9%2C90%2C411/sign=77c3555ad31373f0f53f6f979434288b/643e630fd9f9d72ac6d9dd3cd62a2834359bbbc1.jpg)
+![img](http://i5.tietuku.com/3c3a4768dd8d8e7f.png)
 
 落月的过程非常艰难，控制不好的话登月舱就容易摔在月面上。我拿这个小东西练了能有10来次把。
 
-![img](http://imgsrc.baidu.com/forum/w%3D580%3Bcp%3Dtieba%2C10%2C403%3Bap%3D%BF%B2%B0%CD%C0%AD%CC%AB%BF%D5%BC%C6%BB%AE%B0%C9%2C90%2C411/sign=08f79f18cb3d70cf4cfaaa05c8e7b270/d7737e086e061d957db2fa1979f40ad163d9ca8a.jpg)
-![img](http://imgsrc.baidu.com/forum/w%3D580%3Bcp%3Dtieba%2C10%2C403%3Bap%3D%BF%B2%B0%CD%C0%AD%CC%AB%BF%D5%BC%C6%BB%AE%B0%C9%2C90%2C411/sign=4a17589a85d6277fe912323018037c40/087b7936acaf2edd6eda85c88f1001e93901935f.jpg)
+![img](http://i5.tietuku.com/4af670fa7cc4534f.png)
+![img](http://i5.tietuku.com/227b23aa740e09bb.png)
 
 当然最后成功登月了，这是用来登月的登月舱发射时的样子
 
-![img](http://imgsrc.baidu.com/forum/w%3D580%3Bcp%3Dtieba%2C10%2C403%3Bap%3D%BF%B2%B0%CD%C0%AD%CC%AB%BF%D5%BC%C6%BB%AE%B0%C9%2C90%2C411/sign=0dd78a3695dda144da096cba828cb3d2/bdbcf1fdfc039245d788cf2a8594a4c27d1e2543.jpg)
+![img](http://i5.tietuku.com/e713f4779fa33d32.png)
 
 以及对接以后，在月球轨道的样子
 
-![img](http://imgsrc.baidu.com/forum/w%3D580%3Bcp%3Dtieba%2C10%2C403%3Bap%3D%BF%B2%B0%CD%C0%AD%CC%AB%BF%D5%BC%C6%BB%AE%B0%C9%2C90%2C411/sign=b6e1d5ff17ce36d3a20483380ac859f7/5b6da7cad1c8a7862443632b6509c93d70cf5018.jpg)
+![img](http://i5.tietuku.com/f5f6d002a6933794.png)
 
-当然，最后按照国际惯例插旗
+当然，最后成了
 
-![img](http://imgsrc.baidu.com/forum/w%3D580%3Bcp%3Dtieba%2C10%2C403%3Bap%3D%BF%B2%B0%CD%C0%AD%CC%AB%BF%D5%BC%C6%BB%AE%B0%C9%2C90%2C411/sign=a56401e219d5ad6eaaf964e2b1f05aab/431f67fbb2fb43161a5d405c22a4462308f7d3cc.jpg)
+![img](http://i12.tietuku.com/3536ac46f507214e.png)
 
+后来我还登了火星，在游戏中，小绿人不吃不喝长生不老，给我登火星的漫漫旅途提供了很大的好处。
+并且游戏中不科学的火星大气层让我减轻了很多重量并且可以轻松的使用降落伞着陆。
+
+![img](http://i5.tietuku.com/52867bbbfb78d479.jpg)
+
+而且我轨道修正有点问题，最后居然落在了火星北极的冰盖上.....
+
+![img](http://i5.tietuku.com/df88ea8f9650fa4a.png)
+
+最后成功的从火星起飞返回了
+
+###空天飞机(SSTO)时代
+
+空天飞机在现实中是几乎不可能出现的，太难了。只能等待推进剂或者发动机的革命性的进步才有希望。但是坎星要简单的多。因为坎星星球半径小，大气层薄，
+并且第一宇宙速度只有2.4km/s左右，卡门线只有70km。而地球的第一宇宙速度有7.9km/s，卡门线在100km。并且坎星人的材料都是黑科技，返回大气层的时候从来烧不坏。
+
+![img](http://i5.tietuku.com/7d0cdeff799be728.png)
+
+尽管如此，空天飞机也是我在玩KSP这么长时间以来碰到的最难的问题。除非不科学的堆积进气道，否则在有限的条件下，引擎的推力，效率，载油量，重量，发动机切换
+时机等等都是莫大的麻烦。我最后也只做出了如上图拿样的一架SSTO，并且几乎就是去一趟太空就刚刚好烧掉所有的燃料。
+
+不过我后来还是开了一点脑洞，挂了两枚导弹去炸卫星。但是我下载的导弹插件没有近炸引信，根本就无法准确命中移动目标，最后只得沦为对地攻击了。
+
+![img](http://i5.tietuku.com/955c1c7c641fa52b.png)
+
+###B9以及FAR时代
+
+真正的深坑开始。
+
+想当年钱学森老爷子从国外回来，看着中国这工业水平，就撂下一句话：“要火箭不要飞机”。在KSP的世界里，几乎也是飞机的难度比火箭高出许多。
+我还学了一些空气动力学的基础知识才造出能飞的飞机来。
+
+![img](http://i12.tietuku.com/dee2986b1853b375.png)
+
+（未完待续）
