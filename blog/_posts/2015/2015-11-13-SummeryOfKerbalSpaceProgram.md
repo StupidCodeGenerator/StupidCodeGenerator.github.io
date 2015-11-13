@@ -32,11 +32,11 @@ robots: none
 
 ###空间站时代
 
-![img](http://imgsrc.baidu.com/forum/w%3D580%3Bcp%3Dtieba%2C10%2C403%3Bap%3D%BF%B2%B0%CD%C0%AD%CC%AB%BF%D5%BC%C6%BB%AE%B0%C9%2C90%2C411/sign=30a701a92cdda3cc0be4b82831d25a71/d31cefc451da81cb424a1bfb5066d016082431ce.jpg)
+![img](http://i5.tietuku.com/3c3a4768dd8d8e7f.png)
 
 当年还发了贴吧给大家看，做了个小空间站，那时刚刚学会对接，高兴的那啥一般。并且交会对接的实现给日后登月乃至登火星都带来了非常大的便利。
 
-![img](http://imgsrc.baidu.com/forum/w%3D580%3Bcp%3Dtieba%2C10%2C403%3Bap%3D%BF%B2%B0%CD%C0%AD%CC%AB%BF%D5%BC%C6%BB%AE%B0%C9%2C90%2C411/sign=17aef393013b5bb5bed720f606e8b649/3f46a50a304e251faa5016c0a586c9177e3e53d1.jpg)
+![img](http://i5.tietuku.com/4af670fa7cc4534f.png)
 
 这个是用来打空间站的火箭，有点像美国的Delta-V。
 
@@ -49,11 +49,8 @@ robots: none
 
 交会对接搞明白以后，登月就不用一次性把两个舱全打上去了，一次一个然后对接就好。第一次尝试的时候，我先搞了一个无人登月小艇来验证技术。
 
-![img](http://i5.tietuku.com/3c3a4768dd8d8e7f.png)
-
 落月的过程非常艰难，控制不好的话登月舱就容易摔在月面上。我拿这个小东西练了能有10来次把。
 
-![img](http://i5.tietuku.com/4af670fa7cc4534f.png)
 ![img](http://i5.tietuku.com/227b23aa740e09bb.png)
 
 当然最后成功登月了，这是用来登月的登月舱发射时的样子
