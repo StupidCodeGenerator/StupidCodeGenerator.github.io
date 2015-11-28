@@ -38,3 +38,5 @@ noita:
         url: /about/
       - name: 笔记
         url: https://github.com/StupidCodeGenerator/StupidCodeGenerator.github.io/wiki/
+      - name: imgs
+        url: https://github.com/StupidCodeGenerator/StupidCodeGenerator.github.io/tree/master/images
