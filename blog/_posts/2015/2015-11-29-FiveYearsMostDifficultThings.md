@@ -1,4 +1,4 @@
-﻿---
+---
 title: "编程第五年，目前认为最难做的两件事"
 layout: post
 description: "命名，注释"
