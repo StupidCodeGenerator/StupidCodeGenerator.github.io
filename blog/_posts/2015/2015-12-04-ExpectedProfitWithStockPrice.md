@@ -1,7 +1,7 @@
 ---
-title: "编程第五年，目前认为最难做的两件事"
+title: "股票收益的期望值与买入价格和持有时间的关系"
 layout: post
-description: "命名，注释"
+description: "股票有风险，赔钱我不管"
 robots: none
 ---
 
