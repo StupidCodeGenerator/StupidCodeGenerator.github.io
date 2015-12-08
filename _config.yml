@@ -36,6 +36,8 @@ noita:
     right:
       - name: 自述
         url: /about/
+      - name: 个人简历
+	url: /resume/
       - name: 笔记
         url: https://github.com/StupidCodeGenerator/StupidCodeGenerator.github.io/wiki/
       - name: imgs
