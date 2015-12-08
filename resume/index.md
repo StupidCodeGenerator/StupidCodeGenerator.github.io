@@ -18,5 +18,7 @@ title: 简历
 ---
 
 博客地址 : www.thebgame.com
+
 Email : c@thebgame.com
+
 github : https://github.com/StupidCodeGenerator
