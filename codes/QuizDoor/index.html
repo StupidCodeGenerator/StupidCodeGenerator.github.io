@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">    
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <title>CollisionTest</title>
+        <style>
+            canvas {
+                display: block;
+                position: absolute;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="Chessboard.js"></script>
+        <script src="Chessman.js"></script>
+        <script src="Chesswall.js"></script>
+        <script src="Utils.js"></script>
+        <script src="Main.js"></script>
+        <script>
+            // ----- Create Canvas ------
+            canvas = document.createElement("canvas");
+            
+            width = window.innerWidth;
+            height = window.innerHeight;
+
+            if (width >= 500) {
+                width  = 320;
+                height = 480;
+                canvas.style.border = "1px solid #000";
+            }
+    
+            canvas.width = width;
+            canvas.height = height;
+
+            if (!(!!canvas.getContext && canvas.getContext("2d"))) {
+                    alert("Your browser doesn't support HTML5, please update to latest version");
+            }
+            context = canvas.getContext('2d');
+            document.body.appendChild(canvas);
+
+            var loop = function() {
+                update();
+                render();
+                window.requestAnimationFrame(loop, canvas);
+            }
+            window.requestAnimationFrame(loop, canvas);
+
+
+            function writeMessage(canvas, message, x, y) {
+                context.font = '7pt Small Fonts';
+                context.fillStyle = 'white';
+                context.fillText(message, x, y);
+            }
+            function getMousePos(canvas, evt) {
+                var rect = canvas.getBoundingClientRect();
+                return {
+                    x: evt.clientX - rect.left,
+                    y: evt.clientY - rect.top
+                };
+            }
+            canvas.addEventListener('click', function(evt){
+                var mousePos = getMousePos(canvas, evt);
+                onClick(mousePos.x, mousePos.y)
+            },false); 
+        </script>
+    </body>
+</html>
