@@ -23,7 +23,7 @@ compress_html:
     envs: [travis]
 # theme
 noita:
-  name: c@thebgame.com
+  name: Home
   description: Jekyll theme built with Foundation
   author:
     name: Anatol Broder
