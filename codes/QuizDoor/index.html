@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">    
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
-        <title>CollisionTest</title>
+        <title>QuizDoor</title>
         <style>
             canvas {
                 display: block;
@@ -22,6 +22,9 @@
         <script src="Chessboard.js"></script>
         <script src="Chessman.js"></script>
         <script src="Chesswall.js"></script>
+        <script src="AiAgent.js"></script>
+        <script src="HumanAgent.js"></script>
+        <script src="Manager.js"></script>
         <script src="Utils.js"></script>
         <script src="Main.js"></script>
         <script>
@@ -46,13 +49,16 @@
             context = canvas.getContext('2d');
             document.body.appendChild(canvas);
 
+            // --- MAIN -----------------------------------------
+
+            mainInit();
+
             var loop = function() {
                 update();
                 render();
                 window.requestAnimationFrame(loop, canvas);
             }
             window.requestAnimationFrame(loop, canvas);
-
 
             function writeMessage(canvas, message, x, y) {
                 context.font = '7pt Small Fonts';
@@ -69,6 +75,10 @@
             canvas.addEventListener('click', function(evt){
                 var mousePos = getMousePos(canvas, evt);
                 onClick(mousePos.x, mousePos.y)
+            },false); 
+            canvas.addEventListener('mousemove', function(evt){
+                var mousePos = getMousePos(canvas, evt);
+                onMove(mousePos.x, mousePos.y)
             },false); 
         </script>
     </body>
