@@ -4,6 +4,8 @@
 
 function HumanAgent(gridX, gridY){
 
+	this.numOfRemainingWalls = 10;
+
 	this.gridX = gridX;
 	this.gridY = gridY;
 
@@ -13,5 +15,6 @@ function HumanAgent(gridX, gridY){
 	this.state = 'WAIT';
 	// The manager contains all information about the game so one single parameter is OK
 	this.behaviorRequest = function(manager){
+		
 	}
 }

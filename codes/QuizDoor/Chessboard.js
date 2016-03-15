@@ -1,7 +1,6 @@
 // Chessboard.js
-// It's the little man walking on the cheesboard.
-// And the x and y is about the grid, not the coordination.
-// and left top grid is 0,0.
+// It contains the chessboard, 2 chessmen and some walls.
+// It's paintable
 
 NUM_GRID_X = 9;
 NUM_GRID_Y = 9;

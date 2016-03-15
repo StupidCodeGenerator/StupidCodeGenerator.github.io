@@ -1,7 +1,8 @@
-// Cheesman.js
-// It's the little man walking on the cheesboard.
+// Chessman.js
+// It's the little man walking on the chessboard.
 // And the x and y is about the grid, not the coordination.
 // and left top grid is 0,0.
+// It's paintable.
 
 function Chessman(boardX, boardY, gridSize, color){
     this.size = gridSize - 10;

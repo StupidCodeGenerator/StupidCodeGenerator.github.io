@@ -5,14 +5,16 @@
 
 function AiAgent(gridX, gridY){
 
+	this.numOfRemainingWalls = 10;
+
 	this.gridX = gridX;
 	this.gridY = gridY;
 
 	this.type = 'AI';
 	// The manager contains all information about the game so one single parameter is OK
 	this.behaviorRequest = function(manager){
-		var behavior;
+		var behavior = new Object();
 		behavior.type = 'MOVE_DOWN';
-		manager.callback(behavior);
+		manager.callBack(behavior);
 	}
 }

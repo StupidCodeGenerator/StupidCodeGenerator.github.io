@@ -1,5 +1,6 @@
 // Main.js
-// It will read the infos in manager an shows that
+// It contains the ChessBoard object, the AgentManager object.
+// And it manages the UI system of the game.
 
 
 
@@ -9,7 +10,7 @@ msgGridIndex = ''
 
 // Units that make up the game
 manager = new Manager();
-chessboard = new Chessboard(25, 25, 30);
+chessboard = new Chessboard(25, 50, 30);
 chessmanAI = new Chessman(chessboard.x, chessboard.y, chessboard.gridSize, 'yellow');
 chessmanHuman = new Chessman(chessboard.x, chessboard.y, chessboard.gridSize, 'blue');
 
@@ -39,15 +40,25 @@ function render(){
         chessboard.draw();
         chessmanAI.draw(manager.aiAgent.gridX, manager.aiAgent.gridY);
         chessmanHuman.draw(manager.humanAgent.gridX, manager.humanAgent.gridY);
+        // draw lines to represent the walls
+        context.strokeStyle = 'red';
+        for(i = 0 ; i < manager.aiAgent.numOfRemainingWalls + 1; i++){
+            context.moveTo(chessboard.x + i * chessboard.gridSize, chessboard.y - 5);
+            context.lineTo(chessboard.x + i * chessboard.gridSize, chessboard.y - chessboard.gridSize);
+        }
+        for(i = 0 ; i < manager.humanAgent.numOfRemainingWalls + 1; i++){
+            context.moveTo(chessboard.x + i * chessboard.gridSize, chessboard.y + chessboard.height + 5);
+            context.lineTo(chessboard.x + i * chessboard.gridSize, chessboard.y + chessboard.height + 5 + chessboard.gridSize);
+        }
         if(manager.humanAgent.state == 'CHESSMAN_CLICKED'){
             chessmanHuman.drawArrows(manager.humanAgent.gridX, manager.humanAgent.gridY);
         }
-        writeMessage(canvas, manager.currentAgent.type, 10, 390);
+        writeMessage(canvas, manager.currentAgent.type, 10, 440);
     }
 
     // debug info
-    writeMessage(canvas, msgMousePos, 10, 350);
-    writeMessage(canvas, msgGridIndex, 10, 370);
+    writeMessage(canvas, msgMousePos, 10, 400);
+    writeMessage(canvas, msgGridIndex, 10, 420);
 }
 
 // It will translate the mouse click into manager's operations
@@ -80,6 +91,12 @@ function onClickOfPlayState(mouseX, mouseY){
                 // Clicked on the wall to pick a wall
                 if(gridX == hAgent.gridX && gridY == hAgent.gridY){ 
                     hAgent.state = 'CHESSMAN_CLICKED';
+                } else if (mouseX >= chessboard.x && 
+                    mouseX <= chessboard.x + chessboard.width &&
+                    mouseY >= chessboard.y + 5 &&
+                    mouseY <= chessboard.y + 5 + chessboard.gridSize
+                ){
+                    hAgent.state = 'WALL_CLICKED';
                 }
                 break;
             case 'CHESSMAN_CLICKED':
@@ -116,6 +133,7 @@ function onClickOfPlayState(mouseX, mouseY){
                 }
                 break;
             case 'WALL_CLICKED':
+
                 break;
         }
     }

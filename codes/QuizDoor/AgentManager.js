@@ -1,7 +1,14 @@
-// AgentManager.js
-// This manager manages the two agents: AI and HUMAN.
-// It will send request of action and recive the behavior 
-// with callback function.
+// Manager.js
+
+// Manager will have the right to decide which agent to act.
+// And manager the callbacks from the agent.
+
+// The interface and the logic is fully seprerated.
+// The agent will be asked for a behavior by given infomantion that event contains it's own chessman.
+
+// The manager will not contains paint or IO interface at all.
+// It will only manager the 2 agents.
+// The Main.js will read the infos in manager and show that.
 
 function AgentManager(){
 
