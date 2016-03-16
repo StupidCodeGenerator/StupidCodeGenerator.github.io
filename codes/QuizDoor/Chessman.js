@@ -1,31 +1,30 @@
 // Chessman.js
 // It's the little man walking on the chessboard.
 // And the x and y is about the grid, not the coordination.
-// and left top grid is 0,0.
-// It's paintable.
+// Left top grid is 0,0.
 
-function Chessman(boardX, boardY, gridSize, color){
-    this.size = gridSize - 10;
-    this.color = color
-    this.gridSize = gridSize;
-    this.boardX = boardX;
-    this.boardY = boardY;
-    this.update = function(){
-    }
+function Chessman(gridX, gridY, color){
+    this.color = color;
+    this.gridX = gridX;
+    this.gridY = gridY;
 
-    this.draw = function(gridX, gridY){
-        var screenX = gridX * this.gridSize + this.boardX;
-        var screenY = gridY * this.gridSize + this.boardY;
+    this.paint = function(context, boardX, boardY, gridSize){
+        context.save();
+        var screenX = this.gridX * gridSize + boardX + 5;
+        var screenY = this.gridY * gridSize + boardY + 5;
+        var chessSize = gridSize - 10
         context.beginPath();
-        context.rect(screenX + 5, screenY + 5, this.size, this.size);
+        context.rect(screenX, screenY, chessSize, chessSize);
         context.lineWidth = 2;
         context.strokeStyle = this.color;
         context.stroke();
+        context.restore();
     }
 
-    this.drawArrows = function(gridX, gridY){
-        var screenX = gridX * this.gridSize + this.boardX;
-        var screenY = gridY * this.gridSize + this.boardY;
+    // When the chessman (of human) is clicked, It will show arrows about direction to move.
+    this.paintArrows = function(context, boardX, boardY, gridSize){
+        var screenX = this.gridX * gridSize + boardX;
+        var screenY = this.gridY * gridSize + boardY;
         context.beginPath();
         if(gridX > 0){          // Draw left arrow
             if(this.pointingArrow == 'LEFT'){
@@ -42,15 +41,15 @@ function Chessman(boardX, boardY, gridSize, color){
         }
         if(gridX < 8){          // Draw the right arrow
             if(this.pointingArrow == 'RIGHT'){
-                context.moveTo(screenX + this.gridSize + 17, screenY + 15);
-                context.lineTo(screenX + this.gridSize + 3, screenY + this.gridSize - 3);
-                context.lineTo(screenX + this.gridSize + 3, screenY + 3);
-                context.lineTo(screenX + this.gridSize + 17, screenY + 15);                
+                context.moveTo(screenX + gridSize + 17, screenY + 15);
+                context.lineTo(screenX + gridSize + 3, screenY + gridSize - 3);
+                context.lineTo(screenX + gridSize + 3, screenY + 3);
+                context.lineTo(screenX + gridSize + 17, screenY + 15);                
             } else {
-                context.moveTo(screenX + this.gridSize + 15, screenY + 15);
-                context.lineTo(screenX + this.gridSize + 5, screenY + this.gridSize - 5);
-                context.lineTo(screenX + this.gridSize + 5, screenY + 5);
-                context.lineTo(screenX + this.gridSize + 15, screenY + 15);                
+                context.moveTo(screenX + gridSize + 15, screenY + 15);
+                context.lineTo(screenX + gridSize + 5, screenY + gridSize - 5);
+                context.lineTo(screenX + gridSize + 5, screenY + 5);
+                context.lineTo(screenX + gridSize + 15, screenY + 15);                
             }
         }
         if(gridY > 0){          // Draw the up arrow
@@ -68,15 +67,15 @@ function Chessman(boardX, boardY, gridSize, color){
         }
         if(gridY < 8){          // Draw the down arrow
             if(this.pointingArrow == 'DOWN'){
-                context.moveTo(screenX + 15, screenY + this.gridSize + 17);
-                context.lineTo(screenX + 3, screenY + this.gridSize + 3);
-                context.lineTo(screenX + this.gridSize - 3, screenY + this.gridSize + 3);
-                context.lineTo(screenX + 15, screenY + this.gridSize + 17);
+                context.moveTo(screenX + 15, screenY + gridSize + 17);
+                context.lineTo(screenX + 3, screenY + gridSize + 3);
+                context.lineTo(screenX + gridSize - 3, screenY + gridSize + 3);
+                context.lineTo(screenX + 15, screenY + gridSize + 17);
             } else {
-                context.moveTo(screenX + 15, screenY + this.gridSize + 15);
-                context.lineTo(screenX + 5, screenY + this.gridSize + 5);
-                context.lineTo(screenX + this.gridSize - 5, screenY + this.gridSize + 5);
-                context.lineTo(screenX + 15, screenY + this.gridSize + 15);
+                context.moveTo(screenX + 15, screenY + gridSize + 15);
+                context.lineTo(screenX + 5, screenY + gridSize + 5);
+                context.lineTo(screenX + gridSize - 5, screenY + gridSize + 5);
+                context.lineTo(screenX + 15, screenY + gridSize + 15);
             }
         }
         context.lineWidth = 1;

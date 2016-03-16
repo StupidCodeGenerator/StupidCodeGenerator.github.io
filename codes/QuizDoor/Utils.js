@@ -10,3 +10,9 @@ function atan2Pi(deltaX, deltaY){
     }
     return angle;
 }
+
+function writeMessage(canvas, message, x, y) {
+    context.font = '7pt Small Fonts';
+    context.fillStyle = 'white';
+    context.fillText(message, x, y);
+}
