@@ -1,21 +1,13 @@
 // Main.js
+
 // It contains the ChessBoard object, the AgentManager object.
 // And it manages the UI system of the game.
+// It also maintains the game's state system.
 
-
-
-// Debug info. Remove that after the game is finished
-msgMousePos = '';
-msgGridIndex = ''
-
-// Units that make up the game
-manager = new Manager();
 chessboard = new Chessboard(25, 50, 30);
-chessmanAI = new Chessman(chessboard.x, chessboard.y, chessboard.gridSize, 'yellow');
-chessmanHuman = new Chessman(chessboard.x, chessboard.y, chessboard.gridSize, 'blue');
+agentManger = new AgentManager();
 
-
-
+// COVER, PLAY, SCORE, etc.
 currentState = 'NONE';
 
 function mainInit(){
@@ -26,7 +18,7 @@ function mainInit(){
 function update(){
 }
 
-function render(){
+function paint(){
     // Clear the screen
     context.save();
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -37,28 +29,33 @@ function render(){
     context.restore();
     // Infos in manager
     if(currentState == 'PLAY'){
-        chessboard.draw();
-        chessmanAI.draw(manager.aiAgent.gridX, manager.aiAgent.gridY);
-        chessmanHuman.draw(manager.humanAgent.gridX, manager.humanAgent.gridY);
-        // draw lines to represent the walls
-        context.strokeStyle = 'red';
-        for(i = 0 ; i < manager.aiAgent.numOfRemainingWalls + 1; i++){
-            context.moveTo(chessboard.x + i * chessboard.gridSize, chessboard.y - 5);
-            context.lineTo(chessboard.x + i * chessboard.gridSize, chessboard.y - chessboard.gridSize);
-        }
-        for(i = 0 ; i < manager.humanAgent.numOfRemainingWalls + 1; i++){
-            context.moveTo(chessboard.x + i * chessboard.gridSize, chessboard.y + chessboard.height + 5);
-            context.lineTo(chessboard.x + i * chessboard.gridSize, chessboard.y + chessboard.height + 5 + chessboard.gridSize);
-        }
-        if(manager.humanAgent.state == 'CHESSMAN_CLICKED'){
-            chessmanHuman.drawArrows(manager.humanAgent.gridX, manager.humanAgent.gridY);
-        }
-        writeMessage(canvas, manager.currentAgent.type, 10, 440);
+        paintPlay(context);
     }
 
     // debug info
     writeMessage(canvas, msgMousePos, 10, 400);
     writeMessage(canvas, msgGridIndex, 10, 420);
+}
+
+// The paint of state_play
+function paintPlay(context){
+    chessboard.draw();
+    chessmanAI.draw(manager.aiAgent.gridX, manager.aiAgent.gridY);
+    chessmanHuman.draw(manager.humanAgent.gridX, manager.humanAgent.gridY);
+    // draw lines to represent the walls
+    context.strokeStyle = 'red';
+    for(i = 0 ; i < manager.aiAgent.numOfRemainingWalls + 1; i++){
+        context.moveTo(chessboard.x + i * chessboard.gridSize, chessboard.y - 5);
+        context.lineTo(chessboard.x + i * chessboard.gridSize, chessboard.y - chessboard.gridSize);
+    }
+    for(i = 0 ; i < manager.humanAgent.numOfRemainingWalls + 1; i++){
+        context.moveTo(chessboard.x + i * chessboard.gridSize, chessboard.y + chessboard.height + 5);
+        context.lineTo(chessboard.x + i * chessboard.gridSize, chessboard.y + chessboard.height + 5 + chessboard.gridSize);
+    }
+    if(manager.humanAgent.state == 'CHESSMAN_CLICKED'){
+        chessmanHuman.drawArrows(manager.humanAgent.gridX, manager.humanAgent.gridY);
+    }
+    writeMessage(canvas, manager.currentAgent.type, 10, 440);    
 }
 
 // It will translate the mouse click into manager's operations
