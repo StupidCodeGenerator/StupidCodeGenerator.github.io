@@ -6,6 +6,11 @@
 // Unless it's necessary.
 
 function Game(){
+
+	// -------------------------------------------------------------
+	//  Properties
+	// -------------------------------------------------------------
+
 	// Game state
 	this.state = 'NONE';
 
@@ -112,7 +117,8 @@ function Game(){
 	    	this.chessboard.gridSize);
 	    // Draw arrow when the chessman is clicked by human.
 	    if(this.humanAgent.state == 'CHESSMAN_CLICKED'){
-	        this.chessmanHuman.drawArrows(this.humanAgent.gridX, this.humanAgent.gridY);
+	        this.chessmanHuman.paintArrows(context, this.humanAgent.gridX, 
+	        	this.humanAgent.gridY, this.chessboard.gridSize);
 	    }
 	    writeMessage(canvas, this.currentAgent.type, 10, 440);   	
 	}
@@ -122,62 +128,57 @@ function Game(){
 	// --------------------------------------------------------------
 	this.onClick = function(mouseX, mouseY){
 		msgMousePos = 'Mouse position: ' + mouseX + ',' + mouseY;
-	    var gridX = Math.floor((mouseX - chessboard.x) / chessboard.gridSize);
-	    var gridY = Math.floor((mouseY - chessboard.y) / chessboard.gridSize);
-	    if(gridX < 0 || gridY < 0 || gridX > 8 || gridY > 8){
-	        msgGridIndex = "Out";
-	    } else {
-	        msgGridIndex = "Grid("+gridX+","+gridY+")";
-	    }
+	    var gridX = Math.floor((mouseX - this.chessboard.x) / this.chessboard.gridSize);
+	    var gridY = Math.floor((mouseY - this.chessboard.y) / this.chessboard.gridSize);
 	    // State opeartions
-	    if(currentState == 'PLAY'){
-	        onClickOfPlay(mouseX, mouseY)
+	    if(this.state == 'PLAY'){
+	        this.onClickOfPlay(mouseX, mouseY)
 	    }
 	}
 
 	this.onClickOfPlay = function(mouseX, mouseY){
-		var gridX = Math.floor((mouseX - chessboard.x) / chessboard.gridSize);
-	    var gridY = Math.floor((mouseY - chessboard.y) / chessboard.gridSize);
+		var gridX = Math.floor((mouseX - this.chessboard.x) / this.chessboard.gridSize);
+	    var gridY = Math.floor((mouseY - this.chessboard.y) / this.chessboard.gridSize);
 	    // Translate the player's operation into humanAgent's behavior
-	    if(manager.currentAgent.type == 'HUMAN'){
-	        var hAgent = manager.humanAgent;
+	    if(this.currentAgent.type == 'HUMAN'){
+	        var hAgent = this.humanAgent;
 	        switch(hAgent.state){
 	            case 'WAIT':
 	                // Clicked on the chessman to show arrow,
 	                // Clicked on the wall to pick a wall
-	                if(gridX == hAgent.gridX && gridY == hAgent.gridY){ 
+	                if(gridX == this.chessmanHuman.gridX && gridY == this.chessmanHuman.gridY){ 
 	                    hAgent.state = 'CHESSMAN_CLICKED';
-	                } else if (mouseX >= chessboard.x && 
-	                    mouseX <= chessboard.x + chessboard.width &&
-	                    mouseY >= chessboard.y + 5 &&
-	                    mouseY <= chessboard.y + 5 + chessboard.gridSize
+	                } else if (mouseX >= this.chessboard.x && 
+	                    mouseX <= this.chessboard.x + this.chessboard.width &&
+	                    mouseY >= this.chessboard.y + 5 &&
+	                    mouseY <= this.chessboard.y + 5 + this.chessboard.gridSize
 	                ){
 	                    hAgent.state = 'WALL_CLICKED';
 	                }
 	                break;
 	            case 'CHESSMAN_CLICKED':
-	                if(gridX == hAgent.gridX - 1 && gridY == hAgent.gridY){
+	                if(gridX == this.chessmanHuman.gridX - 1 && gridY == this.chessmanHuman.gridY){
 	                    if(hAgent.gridX > 0){
 	                        var behavior = new Object();
 	                        behavior.type = 'MOVE_LEFT';
-	                        manager.callBack(behavior);
+	                        this.callBack(behavior);
 	                        hAgent.state = 'WAIT';
 	                    }
-	                } else if (gridX == hAgent.gridX + 1 && gridY == hAgent.gridY){
+	                } else if (gridX == this.chessmanHuman.gridX + 1 && gridY == this.chessmanHuman.gridY){
 	                    if(hAgent.gridX < 8){
 	                        var behavior = new Object();
 	                        behavior.type = 'MOVE_RIGHT';
-	                        manager.callBack(behavior);
+	                        this.callBack(behavior);
 	                        hAgent.state = 'WAIT';
 	                    }
-	                } else if (gridX == hAgent.gridX && gridY == hAgent.gridY - 1){
+	                } else if (gridX == this.chessmanHuman.gridX && gridY == this.chessmanHuman.gridY - 1){
 	                    if(hAgent.gridY > 0){
 	                        var behavior = new Object();
                     	    behavior.type = 'MOVE_UP';
-                    	    manager.callBack(behavior);
+                    	    this.callBack(behavior);
                     	    hAgent.state = 'WAIT';
                     	}
-	                } else if (gridX == hAgent.gridX && gridY == hAgent.gridY + 1){
+	                } else if (gridX == this.chessmanHuman.gridX && gridY == this.chessmanHuman.gridY + 1){
 	                    if(hAgent.gridY < 8){
 	                        var behavior = new Object();
 	                        behavior.type = 'MOVE_DOWN';
@@ -185,7 +186,7 @@ function Game(){
 	                        hAgent.state = 'WAIT';
 	                    }
 	                } else {
-	                    manager.humanAgent.state = 'WAIT';
+	                    this.humanAgent.state = 'WAIT';
 	                }
 	                break;
 	            case 'WALL_CLICKED':
