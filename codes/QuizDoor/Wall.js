@@ -1,22 +1,23 @@
 // Wall.js
 
-function Chesswall(leftX, topY, gridSize, direction, boardX, boardY){
+// UP = gridY < 0 
+// DOWN = gridY > 8
+
+function Chesswall(gridX, gridY, direction){
 	
-	this.x = leftX * gridSize + boardX;
-	this.y = topY * gridSize + boardY;
-	this.gridSize = gridSize;	
-	this.direction = direction;
+    this.direction = direction;
+    this.gridX = gridX;
+    this.gridY = gridY;
 
-    this.update = function(){
-    }
-
-    this.draw = function(){
+    this.paint = function(boardX, boardY, gridSize){
+        var screenX = this.gridX * gridSize + boardX;
+        var screenY = this.gridY * gridSize + boardY;
         context.beginPath();
-        context.moveTo(this.x, this.y)
+        context.moveTo(screenX, screenY)
         if (this.direction == 'HORIZONTAL'){
-        	context.lineTo(this.x + this.gridSize, this.y);
-        } else {
-        	context.lineTo(this.x, this.y + this.gridSize);
+        	context.lineTo(screenX + gridSize, screenY);
+        } else if (this.direction == 'VERTICAL'){
+        	context.lineTo(screenX, screenY + gridSize);
         }
         context.lineWidth = 3;
         context.strokeStyle = 'red';

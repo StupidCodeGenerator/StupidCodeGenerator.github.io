@@ -2,12 +2,9 @@
 
 // There's only two agent's in this world so there's no need to use the inherition system.
 
-function HumanAgent(gridX, gridY){
+function HumanAgent(){
 
 	this.numOfRemainingWalls = 10;
-
-	this.gridX = gridX;
-	this.gridY = gridY;
 
 	this.type = 'HUMAN';
 

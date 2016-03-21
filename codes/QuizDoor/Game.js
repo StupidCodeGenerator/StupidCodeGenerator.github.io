@@ -23,10 +23,8 @@ function Game(){
 	this.chessboard = new Chessboard(25, 50, 30, 9, 9);
 	this.chessmanHuman = new Chessman(4, 8, 'blue');
 	this.chessmanAI = new Chessman(4, 0, 'yellow');
-	this.horizontalWalls =  [];
-	this.verticalWalls = [];
-	this.numOfWallsOfAI = 10;
-	this.numOfWallsOfHuman = 10;
+	this.upWalls = [];
+	this.downWalls = [];
 
 	// --------------------------------------------------------------
 	//  Game process managements
@@ -34,12 +32,13 @@ function Game(){
 
 	// Function to init the game.
 	this.startNewRound = function(){
-		this.horizontalWalls.length = 0;
-		this.verticalWalls.length = 0;
-		this.currentAgent = this.humanAgent;
-		this.numOfWallsOfHuman = 10;
-		this.numOfWallsOfAI = 10;
 		this.state = 'PLAY';
+		this.currentAgent = this.humanAgent;
+		this.chessmanHuman.init(4, 8, 'blue');
+		this.chessmanAI.init(4, 0, 'yellow');
+		this.upWalls.length = 0;
+		this.downWalls.length = 0;
+		
 	}
 
 	// It will change the agent that acts.
@@ -54,6 +53,7 @@ function Game(){
 
 	// Behavior callback
 	this.callBack = function(behavior){
+		var currentChessman = this.GetCurrentChessman();
 		if(behavior.type == 'HORIZONTAL_WALL'){
 			this.horizontalWalls.push(new Chesswall(behavior.gridX, behavior.gridY));
 			this.nextStep();
@@ -61,27 +61,54 @@ function Game(){
 			this.verticalWalls.push(new Chesswall(behavior.gridX, behavior.gridY));
 			this.nextStep();
 		} else if (behavior.type == 'MOVE_UP'){
-			if(this.currentAgent.gridY > 0){
-				this.currentAgent.gridY--;
+			if(currentChessman.gridY > 0){
+				currentChessman.gridY--;
 				this.nextStep();
 			}
 		} else if (behavior.type == 'MOVE_DOWN'){
-			if(this.currentAgent.gridY < 8){
-				this.currentAgent.gridY++;
+			if(currentChessman.gridY < 8){
+				currentChessman.gridY++;
 				this.nextStep();
 			}
 		} else if (behavior.type == 'MOVE_LEFT'){
-			if(this.currentAgent.gridX > 0){
-				this.currentAgent.gridX--;
+			if(currentChessman.gridX > 0){
+				currentChessman.gridX--;
 				this.nextStep();
 			}
 		} else if (behavior.type == 'MOVE_RIGHT'){
-			if(this.currentAgent.gridX < 8){
-				this.currentAgent.gridX++;
+			if(currentChessman.gridX < 8){
+				currentChessman.gridX++;
 				this.nextStep();
 			}
-		} else {
+		} else if (behavior.type == 'MOVE_UP'){
+			if(currentChessman.gridY > 0){
+				currentChessman.gridY--;
+				this.nextStep();
+			}
+		} else if (behavior.type == 'MOVE_DOWN'){
+			if(currentChessman.gridY < 8){
+				currentChessman.gridY++;
+				this.nextStep();
+			}
+		} else if (behavior.type == 'MOVE_LEFT'){
+			if(currentChessman.gridX > 0){
+				currentChessman.gridX--;
+				this.nextStep();
+			}
+		} else if (behavior.type == 'MOVE_RIGHT'){
+			if(this.currentChessman.gridX < 8){
+				this.currentChessman.gridX++;
+				this.nextStep();
+			}
 			// illegal behavior appeared
+		}
+	}
+
+	this.GetCurrentChessman = function(){
+		if(this.currentAgent == this.humanAgent){
+			return this.chessmanHuman;
+		} else {
+			return this.chessmanAI;
 		}
 	}
 
@@ -110,15 +137,17 @@ function Game(){
 
 	// The paint function of 'PLAY' state
 	this.paintPlay = function(context){
+		// Draw chessmen and board
 		this.chessboard.paint(context);
 	    this.chessmanAI.paint(context, this.chessboard.x, this.chessboard.y, 
 	    	this.chessboard.gridSize);
 	    this.chessmanHuman.paint(context, this.chessboard.x, this.chessboard.y, 
 	    	this.chessboard.gridSize);
+	    // Draw walls
 	    // Draw arrow when the chessman is clicked by human.
 	    if(this.humanAgent.state == 'CHESSMAN_CLICKED'){
-	        this.chessmanHuman.paintArrows(context, this.humanAgent.gridX, 
-	        	this.humanAgent.gridY, this.chessboard.gridSize);
+	        this.chessmanHuman.paintArrows(context, this.chessboard.x,
+	        	this.chessboard.y, this.chessboard.gridSize);
 	    }
 	    writeMessage(canvas, this.currentAgent.type, 10, 440);   	
 	}
@@ -158,31 +187,31 @@ function Game(){
 	                break;
 	            case 'CHESSMAN_CLICKED':
 	                if(gridX == this.chessmanHuman.gridX - 1 && gridY == this.chessmanHuman.gridY){
-	                    if(hAgent.gridX > 0){
+	                    if(this.chessmanHuman.gridX > 0){
 	                        var behavior = new Object();
 	                        behavior.type = 'MOVE_LEFT';
 	                        this.callBack(behavior);
 	                        hAgent.state = 'WAIT';
 	                    }
 	                } else if (gridX == this.chessmanHuman.gridX + 1 && gridY == this.chessmanHuman.gridY){
-	                    if(hAgent.gridX < 8){
+	                    if(this.chessmanHuman.gridX < 8){
 	                        var behavior = new Object();
 	                        behavior.type = 'MOVE_RIGHT';
 	                        this.callBack(behavior);
 	                        hAgent.state = 'WAIT';
 	                    }
 	                } else if (gridX == this.chessmanHuman.gridX && gridY == this.chessmanHuman.gridY - 1){
-	                    if(hAgent.gridY > 0){
+	                    if(this.chessmanHuman.gridY > 0){
 	                        var behavior = new Object();
                     	    behavior.type = 'MOVE_UP';
                     	    this.callBack(behavior);
                     	    hAgent.state = 'WAIT';
                     	}
 	                } else if (gridX == this.chessmanHuman.gridX && gridY == this.chessmanHuman.gridY + 1){
-	                    if(hAgent.gridY < 8){
+	                    if(this.chessmanHuman.gridY < 8){
 	                        var behavior = new Object();
 	                        behavior.type = 'MOVE_DOWN';
-	                        manager.callBack(behavior);
+	                        this.callBack(behavior);
 	                        hAgent.state = 'WAIT';
 	                    }
 	                } else {
