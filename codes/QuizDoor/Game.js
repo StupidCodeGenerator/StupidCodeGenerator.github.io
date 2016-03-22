@@ -25,6 +25,7 @@ function Game(){
 	this.chessmanAI = new Chessman(4, 0, 'yellow');
 	this.upWalls = [];
 	this.downWalls = [];
+	this.placedWalls = [];
 
 	// --------------------------------------------------------------
 	//  Game process managements
@@ -38,7 +39,11 @@ function Game(){
 		this.chessmanAI.init(4, 0, 'yellow');
 		this.upWalls.length = 0;
 		this.downWalls.length = 0;
-		
+		this.placedWalls.length = 0;
+		for (var i = 0; i < 10; i ++){
+			this.upWalls.push(new Wall(i, -1, 'VERTICAL'));
+			this.downWalls.push(new Wall(i, 9, 'VERTICAL'));
+		}
 	}
 
 	// It will change the agent that acts.
@@ -144,6 +149,12 @@ function Game(){
 	    this.chessmanHuman.paint(context, this.chessboard.x, this.chessboard.y, 
 	    	this.chessboard.gridSize);
 	    // Draw walls
+	    for(i in this.upWalls){
+	    	this.upWalls[i].paint(context, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize);
+	    }
+	    for(i in this.downWalls){
+	    	this.downWalls[i].paint(context, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize)
+	    }
 	    // Draw arrow when the chessman is clicked by human.
 	    if(this.humanAgent.state == 'CHESSMAN_CLICKED'){
 	        this.chessmanHuman.paintArrows(context, this.chessboard.x,
