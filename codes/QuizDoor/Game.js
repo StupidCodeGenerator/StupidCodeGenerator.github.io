@@ -249,22 +249,32 @@ function Game(){
     		this.choosenWall.gridX = gridX;
     		this.choosenWall.gridY = gridY;
     	}
+    	for(i in this.upWalls){
+    		this.upWalls[i].isMousePointing(mouseX, mouseY, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize);
+    	}
+    	for(i in this.downWalls){
+    		this.downWalls[i].isMousePointing(mouseX, mouseY, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize);
+    	}
 	}
 
 	this.onMouseDown = function(mouseX, mouseY){
 		var gridX = Math.floor((mouseX - this.chessboard.x) / this.chessboard.gridSize);
     	var gridY = Math.floor((mouseY - this.chessboard.y) / this.chessboard.gridSize);
-    	if(gridY < 0){
+    	if(gridY < 0 || gridY > 8){
     		for (i in this.upWalls){
-    			if(this.upWalls[i].gridX == gridX && this.upWalls[i].gridY == gridY){
+    			if(this.upWalls[i].isMousePointing(mouseX, mouseY, this.chessboard.x, 
+    				this.chessboard.y, this.chessboard.gridSize)
+    			){
     				this.choosenWall = this.upWalls[i];
     				this.oldXOfChoosen = this.choosenWall.gridX;
     				this.oldYOfChoosen = this.choosenWall.gridY;
     			}
     		}
     		for (i in this.downWalls){
-    			if(this.downWalls[i].gridX == gridX && this.downWalls[i].gridY == gridY){
-    				this.choosenWall = this.upWalls[i];
+    			if(this.downWalls[i].isMousePointing(mouseX, mouseY, this.chessboard.x, 
+    				this.chessboard.y, this.chessboard.gridSize)
+    			){
+    				this.choosenWall = this.downWalls[i];
     				this.oldXOfChoosen = this.choosenWall.gridX;
     				this.oldYOfChoosen = this.choosenWall.gridY;
     			}
@@ -278,8 +288,8 @@ function Game(){
     	// Try to place the wall
     	if(this.choosenWall != null){
     		if(this.choosenWall.tryToPlace(this.oldXOfChoosen, this.oldYOfChoosen)){
-    			if(oldYOfChoosen < 0) {                      // means it's up
-    				this.upWalls.remove(this.choosenWall);
+    			if(this.oldYOfChoosen < 0) {                      // means it's up
+    				this.upWalls.splice(this.upWalls.indexOf(this.choosenWall), 1);
     				this.placedWalls.push(this.choosenWall);
     			} else {                                     // means it's down
     				this.downWalls.remove(this.choosenWall);
