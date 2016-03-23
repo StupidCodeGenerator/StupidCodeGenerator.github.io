@@ -76,6 +76,14 @@
                 var mousePos = getMousePos(canvas, evt);
                 game.onMouseMove(mousePos.x, mousePos.y)
             },false); 
+            canvas.addEventListener('mousedown', function(evt){
+                var mousePos = getMousePos(canvas, evt);
+                game.onMouseDown(mousePos.x, mousePos.y)
+            },false); 
+            canvas.addEventListener('mouseup', function(evt){
+                var mousePos = getMousePos(canvas, evt);
+                game.onMouseUp(mousePos.x, mousePos.y)
+            },false); 
         </script>
     </body>
 </html>
