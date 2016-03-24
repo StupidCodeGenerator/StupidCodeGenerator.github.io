@@ -32,6 +32,9 @@ function Game(){
 	this.oldXOfChoosen;
 	this.oldYOfChoosen;
 
+	// Human control
+	this.isHumanControlAvaliable = false;
+
 	// --------------------------------------------------------------
 	//  Game process managements
 	// --------------------------------------------------------------
@@ -112,6 +115,7 @@ function Game(){
 			}
 			// illegal behavior appeared
 		}
+		this.isHumanControlAvaliable = false;
 	}
 
 	this.GetCurrentChessman = function(){
@@ -249,28 +253,30 @@ function Game(){
     	var gridY = Math.floor((mouseY - this.chessboard.y) / this.chessboard.gridSize);
     	var deltaX = mouseX - (gridX * this.chessboard.gridSize + this.chessboard.x); 
     	var deltaY = mouseY - (gridY * this.chessboard.gridSize + this.chessboard.y);
-    	this.chessmanHuman.onMouseMove(gridX, gridY);
-    	if(this.choosenWall != null){
-    		this.choosenWall.gridX = gridX;
-    		this.choosenWall.gridY = gridY;
-    		if(deltaX > deltaY){
-    			this.choosenWall.direction = 'HORIZONTAL';
-    		} else {
-    			this.choosenWall.direction = 'VERTICAL';
+    	if(this.isHumanControlAvaliable){
+    		this.chessmanHuman.onMouseMove(gridX, gridY);
+    		if(this.choosenWall != null){
+    			this.choosenWall.gridX = gridX;
+    			this.choosenWall.gridY = gridY;
+    			if(deltaX > deltaY){
+    				this.choosenWall.direction = 'HORIZONTAL';
+    			} else {
+    				this.choosenWall.direction = 'VERTICAL';
+    			}
     		}
-    	}
-    	for(i in this.upWalls){
-    		this.upWalls[i].isMousePointing(mouseX, mouseY, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize);
-    	}
-    	for(i in this.downWalls){
-    		this.downWalls[i].isMousePointing(mouseX, mouseY, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize);
+    		for(i in this.upWalls){
+    			this.upWalls[i].isMousePointing(mouseX, mouseY, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize);
+    		}
+    		for(i in this.downWalls){
+    			this.downWalls[i].isMousePointing(mouseX, mouseY, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize);
+    		}
     	}
 	}
 
 	this.onMouseDown = function(mouseX, mouseY){
 		var gridX = Math.floor((mouseX - this.chessboard.x) / this.chessboard.gridSize);
     	var gridY = Math.floor((mouseY - this.chessboard.y) / this.chessboard.gridSize);
-    	if(gridY < 0 || gridY > 8){
+    	if(this.isHumanControlAvaliable && (gridY < 0 || gridY > 8)){
     		for (i in this.upWalls){
     			if(this.upWalls[i].isMousePointing(mouseX, mouseY, this.chessboard.x, 
     				this.chessboard.y, this.chessboard.gridSize)
@@ -296,7 +302,7 @@ function Game(){
 		var gridX = Math.floor((mouseX - this.chessboard.x) / this.chessboard.gridSize);
     	var gridY = Math.floor((mouseY - this.chessboard.y) / this.chessboard.gridSize);
     	// Try to place the wall
-    	if(this.choosenWall != null){
+    	if(this.isHumanControlAvaliable && this.choosenWall != null){
     		if(this.choosenWall.tryToPlace(this.placedWalls)){
     			if(this.oldYOfChoosen < 0) {                      // means it's up
     				this.placedWalls.push(this.choosenWall);
