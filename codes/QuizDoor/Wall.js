@@ -57,6 +57,18 @@ function Wall(gridX, gridY, direction){
     // Check if this wall is collide to another wall
     this.isCollideTo = function(theOtherWall){
         if(this.direction == 'HORIZONTAL' && theOtherWall.direction == 'HORIZONTAL'){
+            return Math.abs(this.gridX - theOtherWall.gridX) < 2 && 
+                    this.gridY == theOtherWall.gridY;
+        } else if (this.direction == 'VERTICAL' && theOtherWall.direction == 'VERTICAL'){
+            return Math.abs(this.gridY - theOtherWall.gridY) < 2 && 
+                    this.gridX == theOtherWall.gridX;
+        } else {
+            return this.gridX == theOtherWall.gridX && this.gridY == theOtherWall.gridY;
+        }
+    }
+
+    this.isPositionCollideTo = function(theOtherWall){
+        if(this.direction == 'HORIZONTAL' && theOtherWall.direction == 'HORIZONTAL'){
             return Math.abs(this.gridX - theOtherWall.gridX) < 2;
         } else if (this.direction == 'VERTICAL' && theOtherWall.direction == 'VERTICAL'){
             return Math.abs(this.gridY - theOtherWall.gridY) < 2;
@@ -70,9 +82,9 @@ function Wall(gridX, gridY, direction){
     // Conditions to place :
     // 1. in the board
     // 2. not collide to other walls
-    this.tryToPlace = function(oldX, oldY, placedWalls){
+    this.tryToPlace = function(placedWalls){
         var succeed = true;
-        if(this.gridX < 1 || this.gridY > 7 || this.gridY < 1 || this.gridY > 7){
+        if(this.gridX < 1 || this.gridX > 8 || this.gridY < 1 || this.gridY > 8){
             succeed = false;
         } else {
             for (i in placedWalls){
@@ -80,10 +92,6 @@ function Wall(gridX, gridY, direction){
                     succeed = false;
                 }
             }
-        }
-        if(!succeed){
-            this.gridX = oldX;
-            this.gridY = oldY;
         }
         return succeed; // If succeed, this wall will be placed in "placedWalls" array.
     }

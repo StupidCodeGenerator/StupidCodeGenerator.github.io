@@ -160,6 +160,9 @@ function Game(){
 	    for(i in this.downWalls){
 	    	this.downWalls[i].paint(context, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize)
 	    }
+	    for(i in this.placedWalls){
+	    	this.placedWalls[i].paint(context, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize)
+	    }
 	    // Draw arrow when the chessman is clicked by human.
 	    if(this.humanAgent.state == 'CHESSMAN_CLICKED'){
 	        this.chessmanHuman.paintArrows(context, this.chessboard.x,
@@ -244,10 +247,17 @@ function Game(){
 	this.onMouseMove = function(mouseX, mouseY){
 		var gridX = Math.floor((mouseX - this.chessboard.x) / this.chessboard.gridSize);
     	var gridY = Math.floor((mouseY - this.chessboard.y) / this.chessboard.gridSize);
+    	var deltaX = mouseX - (gridX * this.chessboard.gridSize + this.chessboard.x); 
+    	var deltaY = mouseY - (gridY * this.chessboard.gridSize + this.chessboard.y);
     	this.chessmanHuman.onMouseMove(gridX, gridY);
     	if(this.choosenWall != null){
     		this.choosenWall.gridX = gridX;
     		this.choosenWall.gridY = gridY;
+    		if(deltaX > deltaY){
+    			this.choosenWall.direction = 'HORIZONTAL';
+    		} else {
+    			this.choosenWall.direction = 'VERTICAL';
+    		}
     	}
     	for(i in this.upWalls){
     		this.upWalls[i].isMousePointing(mouseX, mouseY, this.chessboard.x, this.chessboard.y, this.chessboard.gridSize);
@@ -287,14 +297,18 @@ function Game(){
     	var gridY = Math.floor((mouseY - this.chessboard.y) / this.chessboard.gridSize);
     	// Try to place the wall
     	if(this.choosenWall != null){
-    		if(this.choosenWall.tryToPlace(this.oldXOfChoosen, this.oldYOfChoosen)){
+    		if(this.choosenWall.tryToPlace(this.placedWalls)){
     			if(this.oldYOfChoosen < 0) {                      // means it's up
+    				this.placedWalls.push(this.choosenWall);
     				this.upWalls.splice(this.upWalls.indexOf(this.choosenWall), 1);
-    				this.placedWalls.push(this.choosenWall);
     			} else {                                     // means it's down
-    				this.downWalls.remove(this.choosenWall);
     				this.placedWalls.push(this.choosenWall);
+    				this.downWalls.splice(this.downWalls.indexOf(this.choosenWall), 1);
     			}
+    		} else {
+    			this.choosenWall.gridX = this.oldXOfChoosen;
+    			this.choosenWall.gridY = this.oldYOfChoosen;
+    			this.choosenWall.direction = 'VERTICAL';
     		}
     		this.choosenWall = null;
     	}
