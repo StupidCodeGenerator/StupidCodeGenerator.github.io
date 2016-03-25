@@ -33,7 +33,7 @@ function Game(){
 	this.oldYOfChoosen;
 
 	// Human control
-	this.isHumanControlAvaliable = true ;
+	this.isHumanControlAvaliable = true;
 
 	// --------------------------------------------------------------
 	//  Game process managements
