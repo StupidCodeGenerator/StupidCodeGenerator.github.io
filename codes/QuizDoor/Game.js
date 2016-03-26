@@ -58,8 +58,10 @@ function Game(){
 	this.nextStep = function(){
 		if(this.currentAgent.type == 'HUMAN'){
 			this.currentAgent = this.aiAgent;
+			this.isHumanControlAvaliable = false;
 		} else {
 			this.currentAgent = this.humanAgent;
+			this.isHumanControlAvaliable = true;
 		}
 		this.currentAgent.behaviorRequest(this);
 	}
@@ -114,8 +116,9 @@ function Game(){
 				this.nextStep();
 			}
 			// illegal behavior appeared
+		} else if (behavior.type == 'PLACE_WALL'){
+			this.nextStep();
 		}
-		this.isHumanControlAvaliable = false;
 	}
 
 	this.GetCurrentChessman = function(){
@@ -222,5 +225,16 @@ function Game(){
 				this.humanAgent.onMouseUp(mouseX, mouseY, this);
 			}
 		}
+	}
+
+	// --------------------------------------------------------------
+	//  Util functions
+	// --------------------------------------------------------------
+	// it will return an array of positions.
+	// 1. chessman can't go across the wall.
+	// 2. chessman can jump across another chessman. If there's a wall 
+	//    at the back of that chessman, it can go left or right of that.
+	this.getAvaliableGoPositions = function(chessmanX, chessmanY){
+
 	}
 }

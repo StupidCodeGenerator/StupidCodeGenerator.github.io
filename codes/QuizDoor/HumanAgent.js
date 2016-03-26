@@ -14,9 +14,9 @@ function HumanAgent(){
 	this.type = 'HUMAN';
 
 	// All states are : 
-	// 'WAIT' the program is waiting for the operation.
-	// 'CHESSMAN_CLICKED' the chessman is clicked and waiting for move.
-	// 'WALL_PICKED' a wall has been picked and waiting for placement.
+	// 'WAIT'                 the program is waiting for the operation.
+	// 'CHESSMAN_CLICKED'     the chessman is clicked and waiting for move.
+	// 'WALL_PICKED'          a wall has been picked and waiting for placement.
 	this.state = 'WAIT';
 
 	// When this function is called, make the human control avaliable
@@ -43,10 +43,6 @@ function HumanAgent(){
 	            // Clicked on the wall to pick a wall
 	            if(gridX == chessmanGridX && gridY == chessmanGridY){ 
 	                this.state = 'CHESSMAN_CLICKED';
-	            } else if (mouseX >= boardX && mouseX <= boardX + boardWidth &&
-	                mouseY >= boardY + 5 && mouseY <= boardY + 5 + gridSize
-	            ){
-	                this.state = 'WALL_CLICKED';
 	            }
 	            break;
 	        case 'CHESSMAN_CLICKED':
@@ -86,9 +82,6 @@ function HumanAgent(){
 	                this.state = 'WAIT';
 	            }
                 break;
-            case 'WALL_CLICKED':
-
-                break;
 	    }
 	}
 
@@ -99,17 +92,22 @@ function HumanAgent(){
 		var gridSize = game.chessboard.gridSize;
 		var gridX = Math.floor((mouseX - boardX) / gridSize);
     	var gridY = Math.floor((mouseY - boardY) / gridSize);
-    	
-    	if((gridY < 0 || gridY > 8)){
-    		// The upwalls could not be clicked. They're for ai's.
-    		for (i in game.downWalls){
-    			if(game.downWalls[i].isMousePointing(mouseX, mouseY, boardX, boardY, gridSize)){
-    				this.choosenWall = game.downWalls[i];
-    				this.oldXOfChoosen = this.choosenWall.gridX;
-    				this.oldYOfChoosen = this.choosenWall.gridY;
+    	switch(this.state){
+    		case 'WAIT':
+    		if((gridY < 0 || gridY > 8)){
+    			// The upwalls could not be clicked. They're for ai's.
+    			for (i in game.downWalls){
+    				if(game.downWalls[i].isMousePointing(mouseX, mouseY, boardX, boardY, gridSize)){
+    					this.choosenWall = game.downWalls[i];
+    					this.oldXOfChoosen = this.choosenWall.gridX;
+    					this.oldYOfChoosen = this.choosenWall.gridY;
+    					this.state = 'WALL_PICKED';
+    				}
     			}
     		}
+    		break;
     	}
+    	
 	}
 
 	this.onMouseUp = function(mouseX, mouseY, game){
@@ -119,19 +117,26 @@ function HumanAgent(){
 		var gridSize = game.chessboard.gridSize;
 		var gridX = Math.floor((mouseX - boardX) / gridSize);
     	var gridY = Math.floor((mouseY - boardY) / gridSize);
-
-    	// Try to place the wall
-    	if(this.choosenWall != null){
-    		if(this.choosenWall.tryToPlace(game.placedWalls)){
-    			// Only down walls avaliable.
-   				game.placedWalls.push(this.choosenWall);
-   				game.downWalls.splice(game.downWalls.indexOf(this.choosenWall), 1);
-    		} else {
-    			this.choosenWall.gridX = this.oldXOfChoosen;
-    			this.choosenWall.gridY = this.oldYOfChoosen;
-    			this.choosenWall.direction = 'VERTICAL';
+    	switch(this.state){
+    		case 'WALL_PICKED':
+    		// Try to place the wall
+    		if(this.choosenWall != null){
+    			if(this.choosenWall.tryToPlace(game.placedWalls)){
+    				// Placed success, return a behavior
+   					game.placedWalls.push(this.choosenWall);
+   					game.downWalls.splice(game.downWalls.indexOf(this.choosenWall), 1);
+					var behavior = new Object();
+					behavior.type = 'PLACE_WALL';
+                   	game.callBack(behavior);
+    			} else {
+    				this.choosenWall.gridX = this.oldXOfChoosen;
+    				this.choosenWall.gridY = this.oldYOfChoosen;
+    				this.choosenWall.direction = 'VERTICAL';
+    			}
+    			this.choosenWall = null;
+    			this.state = 'WAIT';
     		}
-    		this.choosenWall = null;
+    		break;
     	}
 	}
 
@@ -145,16 +150,20 @@ function HumanAgent(){
     	var deltaX = mouseX - (gridX * gridSize + boardX); 
     	var deltaY = mouseY - (gridY * gridSize + boardY);
 
-   		if(this.choosenWall != null){
-   			this.choosenWall.gridX = gridX;
-   			this.choosenWall.gridY = gridY;
-   			if(deltaX > deltaY){
-   				this.choosenWall.direction = 'HORIZONTAL';
-   			} else {
-   				this.choosenWall.direction = 'VERTICAL';
+    	switch(this.state){
+    		case 'WALL_PICKED':
+    		if(this.choosenWall != null){
+   				this.choosenWall.gridX = gridX;
+   				this.choosenWall.gridY = gridY;
+   				if(deltaX > deltaY){
+   					this.choosenWall.direction = 'HORIZONTAL';
+   				} else {
+   					this.choosenWall.direction = 'VERTICAL';
+   				}
    			}
-   		}
-   		// Only downwalls avaliable
+    		break;
+    	}
+    	// Only downwalls avaliable
    		for(i in game.downWalls){
    			game.downWalls[i].isMousePointing(mouseX, mouseY, boardX, boardY, gridSize);
    		}
