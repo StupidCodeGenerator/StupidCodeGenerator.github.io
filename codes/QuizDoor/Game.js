@@ -172,10 +172,14 @@ function Game(){
 	    }
 	    // Draw arrow when the chessman is clicked by human.
 	    if(this.humanAgent.state == 'CHESSMAN_CLICKED'){
-	        this.chessmanHuman.paintArrows(context, this.chessboard.x,
-	        	this.chessboard.y, this.chessboard.gridSize);
+	        //this.chessmanHuman.paintArrows(context, this.chessboard.x,
+	        //	this.chessboard.y, this.chessboard.gridSize);
+			var goPositions = this.getAvaliableGoPositions(
+				this.chessmanHuman.gridX, this.chessmanHuman.gridY);
+			for (i in goPositions){
+				
+			}
 	    }
-	    writeMessage(canvas, this.currentAgent.type, 10, 440);   	
 	}
 
 	// --------------------------------------------------------------
@@ -187,7 +191,7 @@ function Game(){
 	    var gridY = Math.floor((mouseY - this.chessboard.y) / this.chessboard.gridSize);
 	    // State opeartions
 	    if(this.state == 'PLAY'){
-	        this.onClickOfPlay(mouseX, mouseY)
+	        this.onClickOfPlay(mouseX, mouseY);
 	    }
 	}
 
@@ -234,7 +238,139 @@ function Game(){
 	// 1. chessman can't go across the wall.
 	// 2. chessman can jump across another chessman. If there's a wall 
 	//    at the back of that chessman, it can go left or right of that.
-	this.getAvaliableGoPositions = function(chessmanX, chessmanY){
+	this.getAvaliableGoPositions = function(x, y){
+		var result = [];
+		result.length = 0;
+		if(!this.isSideHasWall(x, y, 'LEFT')){
+			if(this.isSideHasChessman(x, y, 'LEFT')){
+				if(this.isSideHasWall(x - 1, y, 'LEFT')){
+					if(!this.isSideHasWall(x - 1, y, 'UP')){
+						result.push([x - 1, y - 1]); // jump over chessman to up
+					} 
+					if(!this.isSideHasWall(x - 1, y, 'DOWN')){
+						result.push([x - 1, y + 1]); // jump over chessman to down
+					}
+				} else {
+					result.push([x - 2, y]);  // jump over a chessman to left
+				}
+			} else {
+				result.push([x - 1, y]);  // it's clean
+			}
+		}
+		if(!this.isSideHasWall(x, y, 'RIGHT')){
+			if(this.isSideHasChessman(x, y, 'RIGHT')){
+				if(this.isSideHasWall(x + 1, y, 'RIGHT')){
+					if(!this.isSideHasWall(x + 1, y, 'TOP')){
+						result.push([x + 1, y - 1]); // jump over chessman to up
+					}
+					if(!this.isSideHasWall(x + 1, y, 'BOTTOM')){
+						result.push([x + 1, y + 1]); // jump over chessman to down
+					}
+				} else {
+					result.push([x + 2, y]);  // jump over chessman to right
+				}
+			} else{
+				result.push([x + 1, y]);  // it's clean
+			}
+		}
+		if(!this.isSideHasWall(x, y, 'TOP')){
+			if(this.isSideHasChessman(x, y, 'TOP')){
+				if(this.isSideHasWall(x, y - 1, 'TOP')){
+					if(!this.isSideHasWall(x, y - 1, 'LEFT')){
+						result.push([x - 1, y - 1]); // jump over chessman to left
+					}
+					if(!this.isSideHasWall(x, y + 1, 'RIGHT')){
+						result.push([x + 1, y - 1]); // jump over chessman to right
+					}
+				} else {
+					result.push([x, y - 2]); // jump over chessman to up
+				}
+			} else {
+				result.push([x, y - 1]);  // it's clean
+			}
+		}
+		if(!this.isSideHasWall(x, y, 'BOTTOM')){
+			if(this.isSideHasChessman(x, y, 'BOTTOM')){
+				if(this.isSideHasWall(x, y + 1, 'BOTTOM')){
+					if(!this.isSideHasWall(x, y + 1, 'LEFT')){
+						result.push([x - 1, y + 1]); // jump over chessman to left
+					}
+					if(!this.isSideHasWall(x, y + 1), 'RIGHT'){
+						result.push([x + 1, y + 1]); // jump over chessman to right
+					}
+				} else {
+					result.push([x, y + 2]); // jump over chessman to down
+				}
+			} else {
+				result.push([x, y + 1]);  // it's clean
+			}
+		}
+	}
 
+	// each wall has 2 grids. so each side will have 2 possible wall positions.
+	// we call it A and B.
+	this.isSideHasWall = function(x, y, side){
+		var A_X = x;
+		var A_Y = y;
+		var B_X = x;
+		var B_Y = y;
+		var walldirection;
+		switch(side){
+			case 'RIGHT':
+			walldirection = 'VERTICAL';
+			A_X = x + 1;
+			A_Y = y;
+			B_X = x + 1;
+			B_Y = y + 1;
+			break;
+			case 'LEFT':
+			walldirection = 'VERTICAL';
+			A_X = x;
+			A_Y = y;
+			B_X = x;
+			B_Y = y + 1;
+			break;
+			case 'TOP':
+			walldirection = 'HORIZONTAL_WALL';
+			A_X = x;
+			A_Y = y;
+			B_X = x + 1;
+			B_Y = y;
+			break;
+			case 'BOTTOM':
+			walldirection = 'HORIZONTAL_WALL';
+			A_X = x;
+			A_Y = y + 1;
+			B_X = x + 1;
+			B_Y = y + 1;
+			break;
+		}
+		for(i in placedWalls){
+			if(placedWalls[i].side == walldirection && 
+				((placedWalls[i].gridX == A_X && placedWalls[i].gridY == A_Y) ||
+				 (placedWalls[i].gridX == B_X && placedWalls[i].gridY == B_Y))
+			){
+				return true;
+			}
+		}
+		return false;
+	}
+
+
+	this.isSideHasChessman = function(x, y, side){
+		switch(side){
+			case 'LEFT':
+			return (chessmanHuman.gridX == x - 1 && chessmanHuman.gridY == y) ||
+			       (chessmanAI.gridX == x - 1 && chessmanAI.gridY == y);
+			case 'RIGHT':
+			return (chessmanHuman.gridX == x + 1 && chessmanHuman.gridY == y) ||
+			       (chessmanAI.gridX == x + 1 && chessmanAI.gridY == y);
+			case 'TOP':
+			return (chessmanHuman.gridX == x && chessmanHuman.gridY == y - 1) ||
+			       (chessmanAI.gridX == x && chessmanAI.gridY == y - 1);
+			case 'BOTTOM':
+			return (chessmanHuman.gridX == x && chessmanHuman.gridY == y + 1) ||
+			       (chessmanAI.gridX == x && chessmanAI.gridY == y + 1);
+		}
 	}
 }
