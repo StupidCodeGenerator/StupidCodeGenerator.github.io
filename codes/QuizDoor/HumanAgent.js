@@ -3,41 +3,39 @@
 // There's only two agent's in this world so there's no need to use the inherition system.
 // It will contains all the human operations.
 
+// The arrows are all human opeartions. So the arrow creation an painting are all in HumanAgent.
+
 function HumanAgent(){
+    this.numOfRemainingWalls = 10;
+    this.choosenWall = null;
+    this.oldXOfChoosen = -1;
+  	this.oldYOfChoosen = -1;
+    this.type = 'HUMAN';
 
-	this.numOfRemainingWalls = 10;
+    // All states are : 
+    // 'WAIT'                 the program is waiting for the operation.
+    // 'CHESSMAN_CLICKED'     the chessman is clicked and waiting for move.
+    // 'WALL_PICKED'          a wall has been picked and waiting for placement.
+    this.state = 'WAIT';
 
-	this.choosenWall = null;
-	this.oldXOfChoosen = -1;
-	this.oldYOfChoosen = -1;
-
-	this.type = 'HUMAN';
-
-	// All states are : 
-	// 'WAIT'                 the program is waiting for the operation.
-	// 'CHESSMAN_CLICKED'     the chessman is clicked and waiting for move.
-	// 'WALL_PICKED'          a wall has been picked and waiting for placement.
-	this.state = 'WAIT';
-
-	// When this function is called, make the human control avaliable
-	this.behaviorRequest = function(manager){ 
-		manager.isHumanControlAvaliable = true;
-	}
+    // When this function is called, make the human control avaliable
+    this.behaviorRequest = function(manager){ 
+        manager.isHumanControlAvaliable = true;
+    }
 
 
-	this.onClick = function(mouseX, mouseY, game){
-		
-		var boardX = game.chessboard.x;
-		var boardY = game.chessboard.y;
-		var boardWidth = game.chessboard.width;
-		var boardHeight = game.chessboard.height;
-		var chessmanGridX = game.chessmanHuman.gridX;
-		var chessmanGridY = game.chessmanHuman.gridY;
-		var gridSize = game.chessboard.gridSize;
-		var gridX = Math.floor((mouseX - boardX) / gridSize);
-	    var gridY = Math.floor((mouseY - boardY) / gridSize);
-
-		switch(this.state){
+	  this.onClick = function(mouseX, mouseY, game){
+        var boardX = game.chessboard.x;
+        var boardY = game.chessboard.y;
+        var boardWidth = game.chessboard.width;
+        var boardHeight = game.chessboard.height;
+        var chessmanGridX = game.chessmanHuman.gridX;
+        var chessmanGridY = game.chessmanHuman.gridY;
+        var gridSize = game.chessboard.gridSize;
+        var gridX = Math.floor((mouseX - boardX) / gridSize);
+        var gridY = Math.floor((mouseY - boardY) / gridSize);
+  
+		    switch(this.state){
 	        case 'WAIT':
 	            // Clicked on the chessman to show arrow,
 	            // Clicked on the wall to pick a wall
@@ -81,7 +79,7 @@ function HumanAgent(){
 	            } else {
 	                this.state = 'WAIT';
 	            }
-                break;
+              break;
 	    }
 	}
 
