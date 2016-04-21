@@ -1,13 +1,28 @@
 ---
 layout: default
-title: 挖坑男的Blog
 ---
 
-<div class="row">
-  <div class="medium-8 columns">
-    {% include noita/posts-short.html %}
-  </div>
-  <div class="medium-4 columns">
-    <img src="http://i1.tietuku.com/8053d0c73d899997.jpg">
-  </div>
+{% include header.html %}
+
+<div class="portfolio">
+    <h1>Web Design:</h1>
+    <ul>
+        {% for websites in site.data.websites %}
+        <li>
+            <a href="{{ websites.url }}">{{ websites.url }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+<div class="blog">
+    <h1>Blog Posts:</h1>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <span class="date">{{ post.date | date: '%Y %b %d' }}</span> - <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
 </div>

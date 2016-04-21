@@ -1,12 +1,5 @@
-[Noita][demo]
-==================
+# getmicah.github.io
+My blog made with [jekyll](http://jekyllrb.com) and hosted with Github Pages.
 
-[![Build Status][ci-badge]][ci]
-
-[Jekyll][jekyll] theme built with [Foundation][foundation]. Check out the [demo site][demo] with description and tests.
-
-[ci]: https://travis-ci.org/penibelst/jekyll-noita
-[ci-badge]: https://travis-ci.org/penibelst/jekyll-noita.svg?branch=gh-pages
-[demo]: http://noita.penibelst.de/
-[foundation]: http://foundation.zurb.com/
-[jekyll]: http://jekyllrb.com/
+### License
+All this stuff is under the [MIT License](https://raw.githubusercontent.com/getmicah/getmicah.github.io/master/LICENSE)

@@ -1,44 +1,24 @@
-# build
-markdown: kramdown
-permalink: /blog/:year/:title/
-exclude:
-  - CNAME
-  - Gemfile
-  - LICENSE
-  - Rakefile
-  - README.md
-  - vendor/
-  - vnu/
-  - vnu.zip
-layouts: ./_noita
+# My variables
+name: Micah Cowell
+description: cool web design
+google_analytics: UA-39119359-12
+google_verification: null
+
+
+# File management
+include: [".htaccess"]
+exclude: ["README.md", "LICENSE"]
+
+
+# Sass
 sass:
-  sass_dir: noita/_scss
-  style: compressed
-# compress layout in _noita/compress.html
-compress_html:
-  clippings: all
-  endings: all
-  comments: ["<!--", "-->"]
-  ignore:
-    envs: [travis]
-# theme
-noita:
-  name: Home
-  description: Jekyll theme built with Foundation
-  author:
-    name: Anatol Broder
-    url: http://penibelst.de/
-  lang: en
-  favicons:
-    - /assets/2014/04/21/favicon-152.png
-  topbar:
-    toggle: Menu
-    right:
-      - name: 自述
-        url: /about/
-      - name: 个人简历
-        url: /resume/
-      - name: 笔记
-        url: https://github.com/StupidCodeGenerator/StupidCodeGenerator.github.io/wiki/
-      - name: imgs
-        url: https://github.com/StupidCodeGenerator/StupidCodeGenerator.github.io/tree/master/images
+  style: :compressed
+  sass_dir: _sass
+
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge

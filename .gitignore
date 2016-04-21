@@ -1,4 +1,7 @@
-_site/
+.jekyll-metadata
+.htaccess
+.DS_Store
+.sass-cache
 Gemfile.lock
-.sass-cache/
-vnu*
+_site/
+_drafts/
