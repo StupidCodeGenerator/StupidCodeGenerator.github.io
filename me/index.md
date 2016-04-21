@@ -1,20 +1,13 @@
 ---
-layout: about
+layout: page
+title: 自述
 ---
 
-Hello, my name is Micah Cowell. I'm 17 years old living in Washington state. I like the internet, hip hop, and over-priced yo-yos. I make websites in the way I see most appealing and write code to put on Github.
+本人网络称号挖坑男，挖坑无数弃坑无数。在程序领域野心勃勃但能力有限。什么都想学，什么都在学。有一段时间好悬得了精神病，
+但是现在基本行为正常。
 
-[//]: # # What is with the website url?
-[//]: # The url hac.im is just my name backwards.
+现就职于沈阳光音网视科技有限公司，从事棋牌游戏AI开发工作，也因此恶补一切关于人工智能的知识。
 
-# What do you do?
-I write code
+本人已婚，妻子是一名无名画家，感谢他给我的鼓励和支持。
 
-# Who are your favorite artists?
-I currently like Oshi, Anderson Paak, and Common.
-
-# What programming languages do you use?
-I like using Javascript and Sass when making websites but I also like Python and Haskell.
-
-# Which sports teams do you follow?
-I like following the Mariners but hate watching baseball. University of Washington football and basketball. Waiting for the Supersonics.
+Email : c@thebgame.com
