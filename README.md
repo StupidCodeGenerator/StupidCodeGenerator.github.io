@@ -1,5 +1,15 @@
-# getmicah.github.io
-My blog made with [jekyll](http://jekyllrb.com) and hosted with Github Pages.
+# Thinkspace v1
+
+Just another minimalist Jekyll theme that focuses on technical writing. Designed for engineers to write their ranting and findings.
+
+[**Demo**](http://heiswayi.github.io/thinkspace/)
+
+[**Here is how to download/use this theme**](http://heiswayi.github.io/thinkspace/2016/how-to-download-or-use-this-theme/)
+
+### Screenshot
+
+![Screenshot](http://i.imgur.com/WHcnbYF.png)
 
 ### License
-All this stuff is under the [MIT License](https://raw.githubusercontent.com/getmicah/getmicah.github.io/master/LICENSE)
+
+[MIT](LICENSE.md)
