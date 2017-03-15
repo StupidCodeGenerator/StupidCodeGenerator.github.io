@@ -22,3 +22,5 @@ But it will take 3 or 4 years right? I'm still not sure if I should do that. I t
 So I ask for your experience. I really enjoy you game Braid so I think you experience will be helpful.
 
 Thanks
+
+jon@number-none.com
