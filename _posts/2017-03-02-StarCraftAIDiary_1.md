@@ -16,3 +16,7 @@ SupplyManager: 后勤决策层，用来组织农民，发展经济，造人口�
 AttackManager：前线决策层，用来进行战术侦察，进攻。
 
 简单的说，TopManager首先对SupplyManager下达发展资源的指令，当资源人口到达一定指标后，下达指令造血池。在此期间，派一个房子探近点，一个农民探两个远点。当狗攒到一定程度以后，下达指令给AttackManager，AttackManager召集所有的小狗，开始平推。
+
+今天的计划：
+
+SupplyManager 造房子（虫族的房子不太一样），造血池。
