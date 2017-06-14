@@ -1,5 +1,5 @@
 ---
-title: "星际争霸AI日记_1"
+title: "星际争霸AI日记_2"
 layout: post
 description: ""
 robots: none
