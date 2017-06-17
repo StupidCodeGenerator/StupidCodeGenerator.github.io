@@ -24,3 +24,13 @@ robots: none
 比多消耗CPU要来的划算。
 
 Hash, Hash个头
+
+12:51
+
+饭还没到，饿死了。
+
+把KeepTrainingDrone函数移动到ResourceManager里面。
+
+将来也许会把Flow抽象出开局，前期，中期，中后期，大后期几个阶段。
+
+Flow 里面东西很多啊，应该抽出来。
