@@ -21,4 +21,4 @@ PS：
 
 今天第一次灭掉了星际官方AI，截图留念。但是我发现现在的打法很难打掉人族。
 
-![img](https://raw.githubusercontent.com/StupidCodeGenerator/StupidCodeGenerator.github.io/master/images/FirstBeat.png)
+![img](https://raw.githubusercontent.com/StupidCodeGenerator/StupidCodeGenerator.github.io/master/images/FirstBeat.jpg)
