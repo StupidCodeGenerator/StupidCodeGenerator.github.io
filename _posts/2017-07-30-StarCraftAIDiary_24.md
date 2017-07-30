@@ -6,7 +6,7 @@ robots: none
 ---
 
 
-![img](https://raw.githubusercontent.com/StupidCodeGenerator/StupidCodeGenerator.github.io/master/images/FirstBeat.jpg)
+![img](https://raw.githubusercontent.com/StupidCodeGenerator/StupidCodeGenerator.github.io/master/images/mineposition.jpg)
 
 12:44
 
