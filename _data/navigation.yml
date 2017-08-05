@@ -1,17 +1,17 @@
-- title: home
-  url: /
-
-- title: about
+- title: 简历
   url: /me
 
 #- title: contact
 #  url: mailto:micahcowell99@gmail.com
 
-- title: github
+- title: Github
   url: https://github.com/StupidCodeGenerator
 
 - title: 沉思录
   url: /thought
+
+- title: 星际争霸AI开发记录(萌新版)
+  url: /startcraftai
 
 #- title: twitter
 #  url: https://twitter.com/getmicah
