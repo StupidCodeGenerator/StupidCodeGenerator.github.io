@@ -1,11 +1,9 @@
 ---
-title: "星际争霸AI日记_全部"
+title: "星际争霸AI第一次实验全记录"
 layout: post
 description: ""
 robots: none
 ---
-
-每次开发都得新建文件，太麻烦。所以全写在一个文件里算了。
 
 --- 2017-06-12 ---
 
