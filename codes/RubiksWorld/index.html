@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">    
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <title>CollisionTest</title>
+        <style>
+            canvas {
+                display: block;
+                position: absolute;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="cube.js"></script>
+        <script>
+
+
+            // ----- Create Canvas ------
+            canvas = document.createElement("canvas");
+        
+            width = window.innerWidth;
+            height = window.innerHeight;
+
+            if (width >= 456) {
+                width  = 456;
+                height = 456;
+                canvas.style.border = "1px solid #000";
+            }
+    
+            canvas.width = width;
+            canvas.height = height;
+
+            if (!(!!canvas.getContext && canvas.getContext("2d"))) {
+                    alert("Your browser doesn't support HTML5, please update to latest version");
+            }
+            context = canvas.getContext('2d');
+            document.body.appendChild(canvas);
+
+            var loop = function() {
+                update();
+                render();
+                window.requestAnimationFrame(loop, canvas);
+            }
+            window.requestAnimationFrame(loop, canvas);
+
+
+            // ----- Start Game Logic ----------------------------------------------------------------
+
+            var frameCount = 0;
+
+            CUBE_SIZE = 30;
+
+            STATE_STAY = 0;
+            STATE_MOVING = 1;
+
+            var direction = 0; // 0,1,2,3 = left, right, up, down
+            var isRowMove = False;
+            var row_col_number;
+
+            var state = STATE_STAY;
+
+            var message = "Press F5 to restart (bullshit).";
+
+            var cubes = new Array();
+
+            for(var i = 0 ; i < 15; i ++){
+                for(var j = 0 ; j < 15; j++){
+                    var index = i * 15 + j;
+                    var x = i * CUBE_SIZE + 3;
+                    var y = j * CUBE_SIZE + 3;
+                    var color = "white";  // just default
+                    if(i < 5){
+                        if(j < 5){
+                            color = "red";
+                        } else if (j < 10){
+                            color = "blue";
+                        } else {
+                            color = "darkgreen";
+                        }
+                    } else if( i < 10){
+                        if(j < 5){
+                            color = "brown";
+                        } else if (j < 10){
+                            color = "white";
+                        } else {
+                            color = "yellow";
+                        }
+                    } else {
+                        if(j < 5){
+                            color = "white";
+                        } else if (j < 10){
+                            color = "pink";
+                        } else {
+                            color = "orange";
+                        }
+                    }
+                    cubes[index] = new Cube(index, x, y, CUBE_SIZE, color);
+                }
+            }
+
+            function update(){
+                if(state = STATE_MOVING){
+                    while(framCount < CUBE_SIZE){
+                        for(var i = 0 ; i < cubes.length; i ++){
+                        }
+                    }
+                } else {
+                    if(frameCount > 100){
+                        state = STATE_MOVING;
+                        frameCount = 0;
+                        var rand = Math.random();
+                        isRowMove = (rand < 0.5);
+                        rand = Math.random();
+                        direction = Math.floor(4 * rand);
+                        rand = Math.random();
+                        row_col_number = Math.floor(15 * rand);
+                    }
+                }
+
+                framCount ++;
+            }
+
+            function render(){
+                context.save();
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.fillStyle = 'white';
+                context.rect(0, 0, canvas.width, canvas.height);
+                context.fill();
+                context.stroke();
+                context.restore();
+
+                for(var i = 0 ; i < cubes.length; i ++){
+                    cubes[i].draw();
+                }
+
+                writeMessage(canvas, message, 10, 10);
+            }
+
+            function DrawSmallRect(x, y, w, h, c){
+                context.beginPath();
+                context.rect(x, y, w, h);
+                context.lineWidth = 3;
+                context.strokeStyle = 'black';
+                context.fillStyle = c;
+                context.stroke();
+                context.fill();
+            }
+
+            function writeMessage(canvas, message, x, y) {
+                context.font = '7pt Small Fonts';
+                context.fillStyle = 'white';
+                context.fillText(message, x, y);
+            }
+            function getMousePos(canvas, evt) {
+                var rect = canvas.getBoundingClientRect();
+                return {
+                    x: evt.clientX - rect.left,
+                    y: evt.clientY - rect.top
+                };
+            }
+        </script>
+    </body>
+</html>
