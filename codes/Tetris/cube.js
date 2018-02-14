@@ -5,6 +5,7 @@ function Cube(index, x, y, size, color){
     this.y = y;
     this.width = size;
     this.height = size;
+    this.isActive = true;   // is active means it's falling
     this.draw = function(){
         context.beginPath();
         context.rect(this.x, this.y, this.width, this.height);
