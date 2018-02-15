@@ -7,167 +7,186 @@ var TYPE_Z = 4;
 var TYPE_J = 5;
 var TYPE_L = 6;
 
-var I_CUBE_R0 = [
+var I_TETRIMINO_R0 = [
 	[0,0,0,0],
 	[1,1,1,1],
 	[0,0,0,0],
 	[0,0,0,0]
 ];
 
-var I_CUBE_R1 = [
+var I_TETRIMINO_R1 = [
 	[0,0,1,0],
 	[0,0,1,0],
 	[0,0,1,0],
 	[0,0,1,0]
 ];
 
-var I_CUBE_R2 = [
+var I_TETRIMINO_R2 = [
 	[0,0,0,0],
 	[0,0,0,0],
 	[1,1,1,1],
 	[0,0,0,0]
 ];
 
-var I_CUBE_R3 = [
+var I_TETRIMINO_R3 = [
 	[0,1,0,0],
 	[0,1,0,0],
 	[0,1,0,0],
 	[0,1,0,0]
 ];
 
-var O_CUBE = [
+var O_TETRIMINO = [
 	[1,1]
 	[1,1]
 ];
 
-var T_CUBE_R0 = [
+var T_TETRIMINO_R0 = [
 	[0,1,0],
 	[1,1,1],
 	[0,0,0]
 ];
 
-var T_CUBE_R1 = [
+var T_TETRIMINO_R1 = [
 	[0,1,0],
 	[0,1,1],
 	[0,1,0]
 ];
 
-var T_CUBE_R2 = [
+var T_TETRIMINO_R2 = [
 	[0,0,0],
 	[1,1,1],
 	[0,1,0]
 ];
 
-var T_CUBE_R3 = [
+var T_TETRIMINO_R3 = [
 	[0,1,0],
 	[1,1,0],
 	[0,1,0]
 ];
 
-var S_CUBE_R0 = [
+var S_TETRIMINO_R0 = [
 	[0,1,1],
 	[1,1,0],
 	[0,0,0]
 ];
 
-var S_CUBE_R1 = [
+var S_TETRIMINO_R1 = [
 	[0,1,0],
 	[0,1,1],
 	[0,0,1]
 ];
 
-var S_CUBE_R2 = [
+var S_TETRIMINO_R2 = [
 	[0,0,0],
 	[0,1,1],
 	[1,1,0]
 ];
 
-var S_CUBE_R3 = [
+var S_TETRIMINO_R3 = [
 	[1,0,0],
 	[1,1,0],
 	[0,1,0]
 ];
 
-var Z_CUBE_R0 = [
+var Z_TETRIMINO_R0 = [
 	[1,1,0],
 	[0,1,1],
 	[0,0,0]
 ];
 
-var Z_CUBE_R1 = [
+var Z_TETRIMINO_R1 = [
 	[0,0,1],
 	[0,1,1],
 	[0,1,0]
 ];
 
-var Z_CUBE_R2 = [
+var Z_TETRIMINO_R2 = [
 	[0,0,0],
 	[1,1,0],
 	[0,1,1],
 ];
 
-var Z_CUBE_R3 = [
+var Z_TETRIMINO_R3 = [
 	[0,1,0],
 	[1,1,0],
 	[1,0,0]
 ];
 
-var J_CUBE_R0 = [
+var J_TETRIMINO_R0 = [
 	[1,0,0],
 	[1,1,1],
 	[0,0,0]
 ];
 
-var J_CUBE_R1 = [
+var J_TETRIMINO_R1 = [
 	[0,1,1],
 	[0,1,0],
 	[0,1,0]
 ];
 
-var J_CUBE_R2 = [
+var J_TETRIMINO_R2 = [
 	[0,0,0],
 	[1,1,1],
 	[0,0,1]
 ];
 
-var J_CUBE_R3 = [
+var J_TETRIMINO_R3 = [
 	[0,1,0],
 	[0,1,0],
 	[1,1,0]
 ];
 
-var L_CUBE_R0 = [
+var L_TETRIMINO_R0 = [
 	[0,0,1],
 	[1,1,1],
 	[0,0,0]
 ];
 
-var L_CUBE_R1 = [
+var L_TETRIMINO_R1 = [
 	[0,1,0],
 	[0,1,0],
 	[0,1,1]
 ];
 
-var L_CUBE_R2 = [
+var L_TETRIMINO_R2 = [
 	[0,0,0],
 	[1,1,1],
 	[1,0,0]
 ];
 
-var L_CUBE_R3 = [
+var L_TETRIMINO_R3 = [
 	[1,1,0],
 	[0,1,0],
 	[0,1,0]
 ];
 
-
-function GenerateCube(type, rotation){
-	if(rotation > 3){
-		return;
+// It will always from the top, and each type will has it's color
+function Tetrimino(type, rotation){
+switch(type){
+		case TYPE_I:
+		break;
+		case TYPE_O:
+		break;
+		case TYPE_T:
+		break;
+		case TYPE_S:
+		break;
+		case TYPE_Z:
+		break;
+		case TYPE_J:
+		break;
+		case TYPE_L:
+		break;
 	}
 }
 
-function GenerateRandomCube(type){
+function GenerateTetrimino(type, rotation){
+	if(rotation > 3){
+		return;
+	}
 	
+}
+
+function GenerateRandomTetrimino(){
 }
 
