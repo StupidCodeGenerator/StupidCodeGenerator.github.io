@@ -2,15 +2,11 @@ var frameCount = 0;
 var currentValue = 0;
 var randomArray = new Array();
 
-var FRAMES = 1000;
 
 function init(){
 }
 
 function update(){
-    if(frameCount > FRAMES){
-        return;
-    }
 
     var random = GetRandom11();
     currentValue += random;
@@ -21,18 +17,23 @@ function update(){
     context.beginPath();
 
     context.lineWidth = 1;
+
     context.strokeStyle = "black";
     context.fillStyle = "black";
 
-    for(var i = 0 ; i < randomArray.length ; i ++){
-        context.rect(i + 50, canvas.height / 2 + randomArray[i], 1, 1);
+    for(var i = 0 ; i < randomArray.length && i < canvas.width ; i ++){
+        context.rect(i + 50, canvas.height / 2 - randomArray[randomArray.length - i - 1], 1, 1);
     }
 
     context.textAlign = "start"
     context.fillStyle = "#369"
     context.font = "12px 微软雅黑";
+    
+    context.moveTo(0,canvas.height / 2);  
+    context.lineTo(canvas.width, canvas.height / 2); 
 
-    context.fillText(frameCount + "," + randomArray[randomArray.length - 1], 50, 50);
+    context.fillText(randomArray[randomArray.length - 1], 30, canvas.height / 2 - currentValue);
+    context.fillText("Steps = " + frameCount, 30 , 30);
 
     context.fill();
     context.stroke();
