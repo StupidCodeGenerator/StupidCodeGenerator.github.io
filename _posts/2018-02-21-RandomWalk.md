@@ -5,4 +5,4 @@ description: ""
 robots: none
 ---
 
-[地址在此](https://github.com/StupidCodeGenerator/CodeDiary)
+[地址在此](http://www.thebgame.com/codes/RandomWalk/)
