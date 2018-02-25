@@ -18,6 +18,8 @@ function update(){
         randomArray.push(currentValue);
     }
 
+    randomResultArray.push(currentValue);
+
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     context.beginPath();
@@ -28,7 +30,7 @@ function update(){
     context.fillStyle = "black";
 
     for(var i = 0 ; i < randomArray.length && i < canvas.width ; i ++){
-        context.rect(i + 50, canvas.height / 2 - randomArray[randomArray.length - i - 1], 1, 1);
+        context.rect(i + 50, canvas.height / 2 - randomArray[i], 1, 1);
     }
 
     context.textAlign = "start"
@@ -44,7 +46,6 @@ function update(){
     context.fill();
     context.stroke();
     
-    randomResultArray.push(currentValue);
     currentValue = 0;
 
     frameCount ++;
