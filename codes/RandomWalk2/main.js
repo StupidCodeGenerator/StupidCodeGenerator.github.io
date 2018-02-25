@@ -48,10 +48,9 @@ function update(){
 
     for(var i = -100 ; i < 100 ; i ++){
         if(randomResultArray[i] > 0){
-            context.moveTo(1000, i);
-            context.lineTo(1000 + randomResultArray[i], i);
+            context.moveTo(1000, i + canvas.height / 2);
+            context.lineTo(1000 + randomResultArray[i], i + canvas.height / 2);
         }
-        Console.log(randomResultArray[i]);
     }
 
     context.fillText(randomArray[randomArray.length - 1], 30, canvas.height / 2 - currentValue);
