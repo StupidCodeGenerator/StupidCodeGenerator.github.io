@@ -3,9 +3,13 @@ var currentValue = 0;
 
 var randomArray;
 
-var randomResultArray = new Array();
+var randomResultArray;
 
 function init(){
+    randomResultArray = new Array();
+    for(var i = -100 ; i < 100; i ++){
+        randomResultArray[i] = 0;
+    }
 }
 
 function update(){
@@ -18,7 +22,9 @@ function update(){
         randomArray.push(currentValue);
     }
 
-    randomResultArray.push(currentValue);
+    if(currentValue > -100 && currentValue < 100){
+        randomResultArray[currentValue] ++;
+    }
 
     context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -31,6 +37,13 @@ function update(){
 
     for(var i = 0 ; i < randomArray.length && i < canvas.width ; i ++){
         context.rect(i + 50, canvas.height / 2 - randomArray[i], 1, 1);
+    }
+
+    for(var i = -100 ; i < 100 ; i ++){
+        if(randomResultArray[i] > 0){
+            context.moveTo(1000, i);
+            context.lineTo(1000 + randomResultArray[i], i);
+        }
     }
 
     context.textAlign = "start"
