@@ -6,17 +6,17 @@ var randomArray;
 var randomResultArray;
 
 var X_OFFSET = 50;
+var TIMES = 10000;
+var RESULT_WIDTH = 1000;
 
 function init(){
     randomResultArray = new Array();
-    for(var i = -100 ; i < 100; i ++){
+    for(var i = -RESULT_WIDTH ; i < RESULT_WIDTH; i ++){
         randomResultArray[i] = 0;
     }
 }
 
 function update(){
-
-    var TIMES = canvas.width / 2;
 
     randomArray = new Array();
 
@@ -26,7 +26,7 @@ function update(){
         randomArray.push(currentValue);
     }
 
-    if(currentValue > -100 && currentValue < 100){
+    if(currentValue > -RESULT_WIDTH && currentValue < RESULT_WIDTH){
         randomResultArray[currentValue] ++;
     }
 
@@ -39,8 +39,14 @@ function update(){
     context.strokeStyle = "black";
     context.fillStyle = "black";
 
-    for(var i = 0 ; i < randomArray.length && i < canvas.width ; i ++){
-        context.rect(i + X_OFFSET, canvas.height / 2 - randomArray[i], 1, 1);
+    var startIndex = randomArray.length - canvas.width + 2* X_OFFSET;
+
+    for(
+        var i = startIndex; 
+        i < randomArray.length;
+        i ++
+    ){
+        context.rect(i - startIndex + X_OFFSET, canvas.height / 2 - randomArray[i], 1, 1);
     }
 
     context.textAlign = "start"
@@ -50,15 +56,15 @@ function update(){
     context.moveTo(0,canvas.height / 2);  
     context.lineTo(canvas.width, canvas.height / 2); 
 
-    for(var i = -100 ; i < 100 ; i ++){
+    for(var i = -RESULT_WIDTH ; i < RESULT_WIDTH ; i ++){
         if(randomResultArray[i] > 0){
-            context.moveTo(TIMES + X_OFFSET, i + canvas.height / 2);
-            context.lineTo(TIMES + X_OFFSET - randomResultArray[i], i + canvas.height / 2);
+            context.moveTo(canvas.width - X_OFFSET, i + canvas.height / 2);
+            context.lineTo(canvas.width - X_OFFSET - randomResultArray[i], i + canvas.height / 2);
         }
     }
 
-    context.fillText(randomArray[randomArray.length - 1], 30, canvas.height / 2 - currentValue);
-    context.fillText("Steps = " + frameCount, 30 , 30);
+    context.fillText(randomArray[randomArray.length - 1], canvas.width - X_OFFSET, canvas.height / 2 - currentValue);
+    context.fillText("FRAMES = " + frameCount, 30 , 30);
 
     context.fill();
     context.stroke();

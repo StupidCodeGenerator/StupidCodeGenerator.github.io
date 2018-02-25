@@ -5,4 +5,5 @@ description: ""
 robots: none
 ---
 
-[地址在此](http://www.thebgame.com/codes/RandomWalk/)
+[随机游走过程观察](http://www.thebgame.com/codes/RandomWalk/)
+[随机游走结果分布](http://www.thebgame.com/codes/RandomWalk2/)
