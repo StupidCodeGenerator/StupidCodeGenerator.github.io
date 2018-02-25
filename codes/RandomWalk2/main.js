@@ -39,19 +39,20 @@ function update(){
         context.rect(i + 50, canvas.height / 2 - randomArray[i], 1, 1);
     }
 
-    for(var i = -100 ; i < 100 ; i ++){
-        if(randomResultArray[i] > 0){
-            context.moveTo(1000, i);
-            context.lineTo(1000 + randomResultArray[i], i);
-        }
-    }
-
     context.textAlign = "start"
     context.fillStyle = "#369"
     context.font = "12px 微软雅黑";
     
     context.moveTo(0,canvas.height / 2);  
     context.lineTo(canvas.width, canvas.height / 2); 
+
+    for(var i = -100 ; i < 100 ; i ++){
+        if(randomResultArray[i] > 0){
+            context.moveTo(1000, i);
+            context.lineTo(1000 + randomResultArray[i], i);
+        }
+        Console.log(randomResultArray[i]);
+    }
 
     context.fillText(randomArray[randomArray.length - 1], 30, canvas.height / 2 - currentValue);
     context.fillText("Steps = " + frameCount, 30 , 30);
