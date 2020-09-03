@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Environment Test</h2>
+
+<script>
+    document.write("typeof(window.outerHeight) = " + typeof(window.outerHeight) + "<br />");
+    document.write("typeof(window.outerWidth) = " + typeof(window.outerWidth) + "<br />");
+    document.write("window.outerHeight = " + window.outerHeight + "<br />");
+    document.write("window.outerWidth = " + window.outerWidth + "<br />");
+    document.write("typeof(window.callPhantom) = " + typeof(window.callPhantom) + "<br />");
+    document.write("typeof(window._phantom) = " + typeof(window._phantom) + "<br />");
+    document.write("typeof(window.buffer) = " + typeof(window.buffer) + "<br />");
+    document.write("typeof(window.emit) = " + typeof(window.emit) + "<br />");
+    document.write("typeof(window.spwan) = " + typeof(window.spwan) + "<br />");
+    document.write("typeof(window.navigator) = " + typeof(window.navigator) + "<br />");
+    document.write("typeof(window.domAutomation) = " + typeof(window.domAutomation) + "<br />");
+    document.write("typeof(window.domAutomationController) = " + typeof(window.domAutomationController) + "<br />");
+    document.write("typeof(Function.prototype.bind) = " + typeof(Function.prototype.bind) + "<br />");
+    document.write("Error.toString() = " + Error.toString() + "<br />");
+    document.write("Function.prototype = .bind.toString()" + Function.prototype.bind.toString() + "<br />");
+    document.write("Function.prototype.toString().toString() = " + Function.prototype.toString().toString() + "<br />");
+    document.write("window.navigator.plugins && window.navigator.plugins.length = " + window.navigator.plugins && window.navigator.plugins.length + "<br />");
+    document.write("window.navigator.languages = ", window.navigator.languages + "<br />");
+    document.write("window.vendor = ", window.vendor + "<br />");
+    document.write("window.renderer = ", window.renderer + "<br />");
+    document.write("window.Modernizr && window.Modernizr.hairline = ", window.Modernizr && window.Modernizr.hairline + "<br />");
+    document.write("window.chrome = ", window.chrome + "<br />");
+    document.write("webdriver in window.navigator = ", ("webdriver" in window.navigator) + "<br />");
+    document.write("window.navigator.hasOwnProperty(webdriver) = ", window.navigator.hasOwnProperty("webdriver") + "<br />");
+
+    var bits = []
+
+    typeof(window.outerHeight) !== "number" || typeof(window.outerWidth) !== "number" ? 
+         bits[0] = 1 : bits[0] = window.outerHeight < 1 || window.outerWidth < 1 ? 1 : 0,
+    bits[1] = typeof(window.callPhantom) !== "undefined" || typeof(window._phantom) !== "undefined" ? 1 : 0,
+    bits[2] = typeof(window.buffer) === "undefined" ? 0: 1,
+    bits[3] = typeof(window.emit) === "undefined" ? 0: 1,
+    bits[4] = typeof(window.spawn) === "undefined" ? 0 : 1,
+    bits[5] = window.navigator.webdriver === !0 ? 1 : 0,
+    bits[6] = (typeof(window.domAutomation) === "undefined") && (typeof(window.domAutomationController) === "undefined") ? 0 : 1;
+    bits[7] = 0;
+    try {
+        (typeof(Function["prototype"]["bind"]) === "undefined") && (bits[7] = 1),
+        (Function["prototype"]["bind"][p]()["replace"](/bind/g, "Error") !== Error["toString"] && (bits[7] = 1)),
+        (Function["prototype"]["toString"]["toString"]()["replace"](/toString/g, "Error") !==  Error["toString"]  && (bits[7] = 1))
+    } catch (t) {}
+    bits[8] = window.navigator.plugins && window.navigator.plugins.length === 0? 1 : 0,
+    bits[9] = window.navigator.languages === ""? 1 : 0,
+    bits[10] = (window.vendor === "Brian Paul") && window.renderer === "Mesa OffScreen"? 1 : 0,
+    bits[11] = window.Modernizr && window.Modernizr.hairline? 0:1,
+    bits[12] = window.chrome == void 0 ? 1 : 0,
+    bits[13] = "webdriver" in window.navigator ? 1 : 0,
+    bits[14] = window.navigator.hasOwnProperty("webdriver") ? 1 : 0;
+    var n = 0;
+    for(i = 0 ; i < bits.length; i++){
+        n += (bits[i] << i);
+    }
+
+    document.write("envCode = " + n + "<br />");
+
+
+    document.write("0 = " + bits[0]   + "<br />");
+    document.write("1 = " + bits[1]   + "<br />");
+    document.write("2 = " + bits[2]   + "<br />");
+    document.write("3 = " + bits[3]   + "<br />");
+    document.write("4 = " + bits[4]   + "<br />");
+    document.write("5 = " + bits[5]   + "<br />");
+    document.write("6 = " + bits[6]   + "<br />");
+    document.write("7 = " + bits[7]   + "<br />");
+    document.write("8 = " + bits[8]   + "<br />");
+    document.write("9 = " + bits[9]   + "<br />");
+    document.write("10 = " + bits[10] + "<br />");
+    document.write("11 = " + bits[11] + "<br />");
+    document.write("12 = " + bits[12] + "<br />");
+    document.write("13 = " + bits[13] + "<br />");
+    document.write("14 = " + bits[14] + "<br />");
+
+    window.navigator.plugins = []
+    if(window.navigator.plugins){
+        var i;
+        for(i = 0 ; i < window.navigator.plugins.length ; i ++){
+            document.write(window.navigator.plugins[i].name);
+        }
+    }
+</script>
+
+</body>
+</html>
